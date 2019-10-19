@@ -5,12 +5,32 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Hello world</title>
+      <link>/post/hello-world/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/hello-world/</guid>
+      <description>&lt;p&gt;Hello fellow reader and welcome to my blog about myself and my indie game adventure. Before I tell you a bit more about Pixleon AB I think it is appropriate to give a short introduction of who I am.
+My name is Jimmie West, a 35 years old Swedish family man and software developer. It is very important to me to put my family first. If they feel well, I feel well.&lt;/p&gt;
+
+&lt;p&gt;During the last 10+ years I have been working at an awesome company called Configura. Configura’s vision is to become the global leader for developing software used to design spaces. It’s been a fun and at times challenging but rewarding journey and I am happy that I got this opportunity.&lt;/p&gt;
+
+&lt;p&gt;Like for many other people my age, my fascination for games started with the NES. While playing most of NES games you really needed to focus, otherwise you would “die” and eventually need to restart the game from the beginning. There was “lots at stake”. I think this formed me as a person quite a bit. For instance, I could spend months just trying to figure out how to make jump with my skateboard, but when I finally figured it out, I felt invincible. In this way I learned that hard work and staying focused usually pays off. My greatest talent is my ability to stay focused and goal oriented.&lt;/p&gt;
+
+&lt;p&gt;So, why do I want to make games? To become rich and famous? No, not really. The primary driving force for me is the creative freedom and possibility to express and challenge myself through this art form. I refer to it as art rather than engineering even though having engineering skills obviously help with some aspects of game development.&lt;/p&gt;
+
+&lt;p&gt;During the upcoming six months I will spend one workday a week developing a puzzle game for PC. At this point the scope seems to be within reach but there is usually a lot of unforeseen events along the road of completing something, but that is also one of the fun parts. In order to be able to work on this from home and still have my son at kindergarten I had to create a company – Pixleon AB. Pixleon is a play on words, pixel and aeon (a long period of time). Pixels represent something creative and fun to me, so it was natural to have something related to that. It was also important to try to find a somewhat short name that is easy to remember.&lt;/p&gt;
+
+&lt;p&gt;Now I hope you have a better idea of who I am and what motivates me. In the upcoming posts I will try to give you more information about the game I am making, the technology behind it and the ideas that go through my head while developing it. Stay tuned.&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
