@@ -5,12 +5,35 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Level editor</title>
+      <link>/post/level-editor/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/post/level-editor/</guid>
+      <description>&lt;p&gt;I think it is about time I share a bit more information about the game I am working on and what I have been up to during the last couple of weeks.&lt;/p&gt;
+
+&lt;p&gt;The game is called Marbleous Blocks. It is a minimalistic 3D-puzzle/physics game, that consist of several small puzzles. Each puzzle is composed of a few floating platforms and the goal is to guide a marble between those platforms. In order to do so you need to carefully place Tetris-like block pieces between the floating platforms. However, in order to forge a piece, you need a blueprint for the piece and enough block energy. So, it is not just a matter of finding a valid path, you also need to think about how to spend your block energy.&lt;/p&gt;
+
+&lt;p&gt;Throughout a puzzle there may be various useable objects that can be picked up. Some examples include blueprints, energy units and catapults. It is also possible to change the marble you are using to a different one with other properties. Initially you will just have a single marble but as you progress you will find new marble friends that will join your quest. The idea with this approach is to keep the game interesting, but also to increase the difficulty of the puzzles by having more game mechanics to combine in various ways.&lt;/p&gt;
+
+&lt;p&gt;I have been playing around with different ways to interact with the marble. Initially my idea was that the player would control the marble in a direct fashion by using a game pad or keyboard, but early testing proved that the interesting part of the game was to find solutions to puzzles rather than having direct control over the marble. A bonus of this design decision is that the entire game can be played just by using the mouse. I think this has the big benefit of making the game much easier to approach for non-experienced players.&lt;/p&gt;
+
+&lt;p&gt;The last couple of weeks I have been working on a level editor. The reason is to simplify puzzle creation but also give future players a way to challenge their creativity. My initial approach was to use &lt;a href=&#34;https://www.lua.org/&#34; target=&#34;_blank&#34;&gt;Lua&lt;/a&gt; for level creation but even though that allowed for fast iteration it is not as straight forward and playful as dragging or &amp;ldquo;painting&amp;rdquo; out various game objects.&lt;/p&gt;
+
+&lt;p&gt;So how did it go? Overall, I think it went pretty good. I have not been able to finish all the tasks related to the level editor yet, but I think I have a good scalable solution now. Using &lt;a href=&#34;https://github.com/ocornut/imgui&#34; target=&#34;_blank&#34;&gt;Dear IMGUI&lt;/a&gt; was a good decision, at least so it seems like a good choice so far. There are plenty of examples available and the API is clean and easy to use.&lt;/p&gt;
+
+&lt;p&gt;So what is next? Well, currently I am looking into how to create interesting levels of varying difficulty. I realize that it will take lots of play testing to find the right balance. It is so easy to assume certain things when you design puzzles and these assumptions may prove to be wrong. I am also trying to figure out what game mechanics that will give the game the variation needed to keep players interested. I think am on a good path but I will let future play testing be the judge of that.&lt;/p&gt;
+
+&lt;p&gt;That is is for this time. Hopefully I can share some more footage from the game and editor in the upcoming weeks.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hello world</title>
