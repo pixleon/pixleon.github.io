@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="I think it is about time I share a bit more information about the game I am working on and what I have been up to during the last couple of weeks.
+The game is called Marbleous Blocks. It is a minimalistic 3D-puzzle/physics game, that consist of several small puzzles. Each puzzle is composed of a few floating platforms and the goal is to guide a marble between those platforms. In order to do so you need to carefully place Tetris-like block pieces between the floating platforms.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/authors/">
+  <link rel="alternate" hreflang="en-us" href="/post/level-editor/">
 
   
 
@@ -89,32 +90,33 @@
   
 
   
-  <link rel="alternate" href="/authors/index.xml" type="application/rss+xml" title="Pixleon">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/authors/">
+  <link rel="canonical" href="/post/level-editor/">
 
   
   
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Pixleon">
-  <meta property="og:url" content="/authors/">
-  <meta property="og:title" content="Authors | Pixleon">
-  <meta property="og:description" content=""><meta property="og:image" content="/img/logo.png">
-  <meta property="twitter:image" content="/img/logo.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/post/level-editor/">
+  <meta property="og:title" content="Level editor | Pixleon">
+  <meta property="og:description" content="I think it is about time I share a bit more information about the game I am working on and what I have been up to during the last couple of weeks.
+The game is called Marbleous Blocks. It is a minimalistic 3D-puzzle/physics game, that consist of several small puzzles. Each puzzle is composed of a few floating platforms and the goal is to guide a marble between those platforms. In order to do so you need to carefully place Tetris-like block pieces between the floating platforms."><meta property="og:image" content="/post/level-editor/featured.png">
+  <meta property="twitter:image" content="/post/level-editor/featured.png"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2019-12-07T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-12-07T00:00:00&#43;00:00">
   
 
   
@@ -126,7 +128,7 @@
 
 
 
-  <title>Authors | Pixleon</title>
+  <title>Level editor | Pixleon</title>
 
 </head>
 
@@ -317,50 +319,186 @@
 </nav>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
+  <article class="article" itemscope itemtype="http://schema.org/Article">
 
   
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1 itemprop="name">Authors</h1>
+
+
+<div class="article-container pt-3">
+  <h1 itemprop="name">Level editor</h1>
 
   
 
   
-</div>
 
 
 
-<div class="universal-wrapper">
+<meta content="2019-12-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-12-07 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
   
 
-  <ul>
+  
+  <span class="article-date">
     
     
       
-      <li><a href="/authors/admin/"></a></li>
     
-  </ul>
+    <time>Dec 7, 2019</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
 
   
 
 </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 450px;">
+  <div style="position: relative">
+    <img src="/post/level-editor/featured_hue621a505873a3daea1af19792bf8ef86_1021715_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>I think it is about time I share a bit more information about the game I am working on and what I have been up to during the last couple of weeks.</p>
+
+<p>The game is called Marbleous Blocks. It is a minimalistic 3D-puzzle/physics game, that consist of several small puzzles. Each puzzle is composed of a few floating platforms and the goal is to guide a marble between those platforms. In order to do so you need to carefully place Tetris-like block pieces between the floating platforms. However, in order to forge a piece, you need a blueprint for the piece and enough block energy. So, it is not just a matter of finding a valid path, you also need to think about how to spend your block energy.</p>
+
+<p>Throughout a puzzle there may be various useable objects that can be picked up. Some examples include blueprints, energy units and catapults. It is also possible to change the marble you are using to a different one with other properties. Initially you will just have a single marble but as you progress you will find new marble friends that will join your quest. The idea with this approach is to keep the game interesting, but also to increase the difficulty of the puzzles by having more game mechanics to combine in various ways.</p>
+
+<p>I have been playing around with different ways to interact with the marble. Initially my idea was that the player would control the marble in a direct fashion by using a game pad or keyboard, but early testing proved that the interesting part of the game was to find solutions to puzzles rather than having direct control over the marble. A bonus of this design decision is that the entire game can be played just by using the mouse. I think this has the big benefit of making the game much easier to approach for non-experienced players.</p>
+
+<p>The last couple of weeks I have been working on a level editor. The reason is to simplify puzzle creation but also give future players a way to challenge their creativity. My initial approach was to use <a href="https://www.lua.org/" target="_blank">Lua</a> for level creation but even though that allowed for fast iteration it is not as straight forward and playful as dragging or &ldquo;painting&rdquo; out various game objects.</p>
+
+<p>So how did it go? Overall, I think it went pretty good. I have not been able to finish all the tasks related to the level editor yet, but I think I have a good scalable solution now. Using <a href="https://github.com/ocornut/imgui" target="_blank">Dear IMGUI</a> was a good decision, at least it seems like a good choice so far. There are plenty of examples available and the API is clean and easy to use.</p>
+
+<p>So what is next? Well, currently I am looking into how to create interesting levels of varying difficulty. I realize that it will take lots of play testing to find the right balance. It is so easy to assume certain things when you design puzzles and these assumptions may prove to be wrong. I am also trying to figure out what game mechanics that will give the game the variation needed to keep players interested. I think am on a good path but I will let future play testing be the judge of that.</p>
+
+<p>That is it for this time. Hopefully I can share some more footage from the game and editor in the upcoming weeks.</p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu3ca6751b7d553e48ec460a365cc7a5d1_2325_250x250_fill_lanczos_center_2.png" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
 
       
 

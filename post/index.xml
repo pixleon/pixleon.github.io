@@ -5,12 +5,114 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 14 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Beta release</title>
+      <link>/post/beta-release/</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/beta-release/</guid>
+      <description>&lt;p&gt;After total silence for a few months I am happy to announce that there is a playable &amp;ldquo;early beta&amp;rdquo; version of Marbleous Blocks available &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. At the time of writing there are 12 puzzles available but hopefully the number of puzzles will increase quite a bit before the summer.&lt;/p&gt;
+
+&lt;p&gt;So what have I been spending time on since December? A lot of different things actually, but here is an overview:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Extending the level editor with various features.&lt;/li&gt;
+&lt;li&gt;Experimenting with different game mechanics to improve variation.
+
+&lt;ul&gt;
+&lt;li&gt;Catapults.&lt;/li&gt;
+&lt;li&gt;Falling blocks.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Support for three marbles with different abilities.
+
+&lt;ul&gt;
+&lt;li&gt;Normal.&lt;/li&gt;
+&lt;li&gt;Lightweight.&lt;/li&gt;
+&lt;li&gt;Anti-gravity.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Support for Save/Load progress.
+
+&lt;ul&gt;
+&lt;li&gt;Support for auto save.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Improving the menu system.
+
+&lt;ul&gt;
+&lt;li&gt;Show credits.&lt;/li&gt;
+&lt;li&gt;Save slots.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Upgrading C++ version along with different libs.&lt;/li&gt;
+&lt;li&gt;Redesigning world piece placement.&lt;/li&gt;
+&lt;li&gt;Finding suitable game music.&lt;/li&gt;
+&lt;li&gt;Looking over licenses for assets.&lt;/li&gt;
+&lt;li&gt;Improving first impression and robustness by:
+
+&lt;ul&gt;
+&lt;li&gt;Installing C++ redistributable package if necessary.&lt;/li&gt;
+&lt;li&gt;Showing a non-default program icon.&lt;/li&gt;
+&lt;li&gt;Solving the notorious dll loading problem.&lt;/li&gt;
+&lt;li&gt;Giving hints to the player how to interact with the game.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Reworked color palette.&lt;/li&gt;
+&lt;li&gt;Polishing of graphics. Both shaders and 3D-models.&lt;/li&gt;
+&lt;li&gt;Creating an automatic script for packaging the game.&lt;/li&gt;
+&lt;li&gt;Debugging various problems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have any feedback concerning the &amp;ldquo;early beta&amp;rdquo; version of Marbleous Blocks I would be very happy to hear from you. Please send me an &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;email&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My next step is to create more interesting levels along with a short trailer to showcase the game.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Level editor</title>
+      <link>/post/level-editor/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/post/level-editor/</guid>
+      <description>&lt;p&gt;I think it is about time I share a bit more information about the game I am working on and what I have been up to during the last couple of weeks.&lt;/p&gt;
+
+&lt;p&gt;The game is called Marbleous Blocks. It is a minimalistic 3D-puzzle/physics game, that consist of several small puzzles. Each puzzle is composed of a few floating platforms and the goal is to guide a marble between those platforms. In order to do so you need to carefully place Tetris-like block pieces between the floating platforms. However, in order to forge a piece, you need a blueprint for the piece and enough block energy. So, it is not just a matter of finding a valid path, you also need to think about how to spend your block energy.&lt;/p&gt;
+
+&lt;p&gt;Throughout a puzzle there may be various useable objects that can be picked up. Some examples include blueprints, energy units and catapults. It is also possible to change the marble you are using to a different one with other properties. Initially you will just have a single marble but as you progress you will find new marble friends that will join your quest. The idea with this approach is to keep the game interesting, but also to increase the difficulty of the puzzles by having more game mechanics to combine in various ways.&lt;/p&gt;
+
+&lt;p&gt;I have been playing around with different ways to interact with the marble. Initially my idea was that the player would control the marble in a direct fashion by using a game pad or keyboard, but early testing proved that the interesting part of the game was to find solutions to puzzles rather than having direct control over the marble. A bonus of this design decision is that the entire game can be played just by using the mouse. I think this has the big benefit of making the game much easier to approach for non-experienced players.&lt;/p&gt;
+
+&lt;p&gt;The last couple of weeks I have been working on a level editor. The reason is to simplify puzzle creation but also give future players a way to challenge their creativity. My initial approach was to use &lt;a href=&#34;https://www.lua.org/&#34; target=&#34;_blank&#34;&gt;Lua&lt;/a&gt; for level creation but even though that allowed for fast iteration it is not as straight forward and playful as dragging or &amp;ldquo;painting&amp;rdquo; out various game objects.&lt;/p&gt;
+
+&lt;p&gt;So how did it go? Overall, I think it went pretty good. I have not been able to finish all the tasks related to the level editor yet, but I think I have a good scalable solution now. Using &lt;a href=&#34;https://github.com/ocornut/imgui&#34; target=&#34;_blank&#34;&gt;Dear IMGUI&lt;/a&gt; was a good decision, at least it seems like a good choice so far. There are plenty of examples available and the API is clean and easy to use.&lt;/p&gt;
+
+&lt;p&gt;So what is next? Well, currently I am looking into how to create interesting levels of varying difficulty. I realize that it will take lots of play testing to find the right balance. It is so easy to assume certain things when you design puzzles and these assumptions may prove to be wrong. I am also trying to figure out what game mechanics that will give the game the variation needed to keep players interested. I think am on a good path but I will let future play testing be the judge of that.&lt;/p&gt;
+
+&lt;p&gt;That is it for this time. Hopefully I can share some more footage from the game and editor in the upcoming weeks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello world</title>
+      <link>/post/hello-world/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/hello-world/</guid>
+      <description>&lt;p&gt;Hello fellow reader and welcome to my site where I will be sharing information about myself and my indie game adventure. Before I tell you a bit more about Pixleon AB I think it is appropriate to give a short introduction of who I am.
+My name is &lt;a href=&#34;http://www.jimmiewest.se/&#34; target=&#34;_blank&#34;&gt;Jimmie West&lt;/a&gt;, a 35 years old Swedish family man and software developer. It is very important to me to put my family first. If they feel well, I feel well.&lt;/p&gt;
+
+&lt;p&gt;During the last 10+ years I have been working at an awesome company called &lt;a href=&#34;https://www.configura.com/&#34; target=&#34;_blank&#34;&gt;Configura&lt;/a&gt;. Configura’s vision is to become the global leader for developing software used to design spaces. It’s been a fun and at times challenging but rewarding journey and I am happy that I got this opportunity.&lt;/p&gt;
+
+&lt;p&gt;Like for many other people my age, my fascination for games started with the NES. While playing most of NES games you really needed to focus, otherwise you would “die” and eventually need to restart the game from the beginning. There was “lots at stake”. I think this formed me as a person quite a bit. For instance, I could spend months just trying to figure out how to make jump with my skateboard, but when I finally figured it out, I felt invincible. In this way I learned that hard work and staying focused usually pays off. My greatest talent is my ability to stay focused and goal oriented.&lt;/p&gt;
+
+&lt;p&gt;So, why do I want to make games? To become rich and famous? No, not really. The primary driving force for me is the creative freedom and possibility to express and challenge myself through this art form. I refer to it as art rather than engineering even though having engineering skills obviously help with some aspects of game development.&lt;/p&gt;
+
+&lt;p&gt;During the upcoming six months I will spend one workday a week developing a &lt;a href=&#34;http://pixleon.com/project/marbleous-blocks/&#34; target=&#34;_blank&#34;&gt;puzzle game&lt;/a&gt; for PC. At this point the scope seems to be within reach but there is usually a lot of unforeseen events along the road of completing something, but that is also one of the fun parts. In order to be able to work on this from home and still have my son at kindergarten I had to create a company – Pixleon AB. Pixleon is a play on words, pixel and aeon (a long period of time). Pixels represent something creative and fun to me, so it was natural to have something related to that. It was also important to try to find a somewhat short name that is easy to remember.&lt;/p&gt;
+
+&lt;p&gt;Now I hope you have a better idea of who I am and what motivates me. In the upcoming posts I will try to give you more information about the game I am making, the technology behind it and the ideas that go through my head while developing it. Stay tuned.&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
