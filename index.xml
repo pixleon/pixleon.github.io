@@ -55,12 +55,12 @@
 
 &lt;ul&gt;
 &lt;li&gt;Installing C++ redistributable package if necessary.&lt;/li&gt;
-&lt;li&gt;Showing a non-default program icon.&lt;/li&gt;
+&lt;li&gt;Showing a custom program icon.&lt;/li&gt;
 &lt;li&gt;Solving the notorious dll loading problem.&lt;/li&gt;
 &lt;li&gt;Giving hints to the player how to interact with the game.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Reworked color palette.&lt;/li&gt;
-&lt;li&gt;Polishing of graphics. Both shaders and 3D-models.&lt;/li&gt;
+&lt;li&gt;Reworking color palette.&lt;/li&gt;
+&lt;li&gt;Polishing of graphics. Shaders, 3D-models and materials.&lt;/li&gt;
 &lt;li&gt;Creating an automatic script for packaging the game.&lt;/li&gt;
 &lt;li&gt;Debugging various problems.&lt;/li&gt;
 &lt;/ul&gt;
