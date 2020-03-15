@@ -68,6 +68,134 @@
 &lt;p&gt;If you have any feedback concerning the &amp;ldquo;early beta&amp;rdquo; version of Marbleous Blocks I would be very happy to hear from you. Please send me an &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My next step is to create more interesting levels along with a short trailer to showcase the game.&lt;/p&gt;
+
+&lt;p&gt;And finally some geek stats using &lt;a href=&#34;http://cloc.sourceforge.net&#34; target=&#34;_blank&#34;&gt;clock&lt;/a&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Languages&lt;/th&gt;
+&lt;th&gt;files&lt;/th&gt;
+&lt;th&gt;blank&lt;/th&gt;
+&lt;th&gt;comment&lt;/th&gt;
+&lt;th&gt;code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Marbleous Blocks&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C++&lt;/td&gt;
+&lt;td&gt;92&lt;/td&gt;
+&lt;td&gt;3575&lt;/td&gt;
+&lt;td&gt;4211&lt;/td&gt;
+&lt;td&gt;10112&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C/C++ Header&lt;/td&gt;
+&lt;td&gt;98&lt;/td&gt;
+&lt;td&gt;1283&lt;/td&gt;
+&lt;td&gt;320&lt;/td&gt;
+&lt;td&gt;3641&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;make&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;152&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DOS Batch&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;53&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Resource File&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUM:&lt;/td&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;td&gt;4931&lt;/td&gt;
+&lt;td&gt;4549&lt;/td&gt;
+&lt;td&gt;13959&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Pixleon Engine&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C++&lt;/td&gt;
+&lt;td&gt;97&lt;/td&gt;
+&lt;td&gt;3008&lt;/td&gt;
+&lt;td&gt;3265&lt;/td&gt;
+&lt;td&gt;6658&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C/C++ Header&lt;/td&gt;
+&lt;td&gt;169&lt;/td&gt;
+&lt;td&gt;2241&lt;/td&gt;
+&lt;td&gt;1137&lt;/td&gt;
+&lt;td&gt;4923&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;make&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;120&lt;/td&gt;
+&lt;td&gt;53&lt;/td&gt;
+&lt;td&gt;246&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;DOS Batch&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;107&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SUM:&lt;/td&gt;
+&lt;td&gt;282&lt;/td&gt;
+&lt;td&gt;5399&lt;/td&gt;
+&lt;td&gt;4455&lt;/td&gt;
+&lt;td&gt;11934&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     
