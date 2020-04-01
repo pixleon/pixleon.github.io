@@ -5,12 +5,31 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Pixleon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 14 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Pixleon</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>More levels</title>
+      <link>/post/more-levels/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/more-levels/</guid>
+      <description>&lt;p&gt;A number of friends and colleagues have tried the game now and I have gotten some really valuable feedback. Many thanks to all of you. I have not been able to fix all the hickups yet but I will get there eventually.&lt;/p&gt;
+
+&lt;p&gt;Since I released the beta I have not been able to work that much on the game. There are two reasons for this. First, I have started working full time at &lt;a href=&#34;https://configura.com&#34; target=&#34;_blank&#34;&gt;Configura&lt;/a&gt; again. No more Tuesdays off to work on the game, at least not at this time. Secondly and more important, me and my wife got our second child - a healthy baby girl. Even though programming and game development is something I really enjoy it is nothing compared to what I get back from my family - you are the best.&lt;/p&gt;
+
+&lt;p&gt;Anyhow, I have made a bit of progress since last time. There are now five new levels available in the beta that can be downloaded for free &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. I got some feedback concerning the steep increase in difficulty of the game and to alleviate that I have created a few more introductory levels&lt;/p&gt;
+
+&lt;p&gt;My next step is to create even more levels. I still have not made a trailer so that is also high on my priority list.&lt;/p&gt;
+
+&lt;p&gt;I have also started to design a &amp;ldquo;directed raft&amp;rdquo; feature. Basically a block that can carry the marble from one platform to another. I hope this will open up for some interesting levels. Especially in combination with the different marbles, the &amp;ldquo;catapult&amp;rdquo; and &amp;ldquo;drop&amp;rdquo; feature that is already in the game. I also aim to have triggers/button that will allow the player to change direction in which the raft moves. Time will tell if this feature is as good in practice as it is on paper. Nevertheless, trying out new things like this usually open up for new interesting ideas.&lt;/p&gt;
+
+&lt;p&gt;From my perspective game development is a lot about exploration of different ideas and concepts and trying out how those concepts interacts with each other. This is one of the things I find particularly engaging and fun when it comes to working with interactive software such as games.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Beta release</title>
@@ -67,7 +86,7 @@
 
 &lt;p&gt;If you have any feedback concerning the &amp;ldquo;early beta&amp;rdquo; version of Marbleous Blocks I would be very happy to hear from you. Please send me an &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;email&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here is some geek stats gathered by using &lt;a href=&#34;http://cloc.sourceforge.net&#34; target=&#34;_blank&#34;&gt;clock&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is some geek stats gathered by using &lt;a href=&#34;http://cloc.sourceforge.net&#34; target=&#34;_blank&#34;&gt;cloc&lt;/a&gt;.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
