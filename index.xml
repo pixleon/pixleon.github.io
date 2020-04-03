@@ -5,12 +5,32 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Pixleon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Pixleon</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Trailer</title>
+      <link>/post/trailer/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/trailer/</guid>
+      <description>&lt;p&gt;I just uploaded a short trailer for the beta version of the Marbleous Blocks. To produce the trailer I used the built-in Windows 10 Game bar capture tool along with an awesome (free) piece of software called &lt;a href=&#34;https://fxhome.com/hitfilm-express&#34; target=&#34;_blank&#34;&gt;Hitfilm Express&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is the result:&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/yttBp9HnHUg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Pixleon would be very happy if you would consider to try out the beta. It is free and available &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. Pixleon would be even happier if you would &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;share your impressions&lt;/a&gt;. Is is too easy/hard? Which level was most fun? Is the controls intuitive? Please help us make this game the best it can be. Many thanks in advance.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>More levels</title>
@@ -266,11 +286,20 @@ My name is &lt;a href=&#34;http://www.jimmiewest.se/&#34; target=&#34;_blank&#34
       <link>/project/marbleous-blocks/</link>
       <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/project/marbleous-blocks/</guid>
-      <description>&lt;p&gt;Marbleous Blocks is a 3D-puzzle game where you need to carefully construct paths using blocks in order to free your marbleous marble friends. The game is currently in development and scheduled for release on PC during 2020.&lt;/p&gt;
+      <description>&lt;p&gt;Marbleous Blocks is a 3D-puzzle game where you construct paths using blocks in order to free your marbleous marble friends. The game is currently in development and scheduled for release on PC during 2020.&lt;/p&gt;
 
-&lt;p&gt;Marbleous Blocks has taken inspiration from a number of games including &lt;a href=&#34;https://boardgamegeek.com/boardgame/163412/patchwork&#34; target=&#34;_blank&#34;&gt;Patchwork&lt;/a&gt;, &lt;a href=&#34;http://the-witness.net/&#34; target=&#34;_blank&#34;&gt;The Witness&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=JqlbDJIPXwo&#34; target=&#34;_blank&#34;&gt;Super Metroid&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The game has taken inspiration from a number of other games including &lt;a href=&#34;https://boardgamegeek.com/boardgame/163412/patchwork&#34; target=&#34;_blank&#34;&gt;Patchwork&lt;/a&gt;, &lt;a href=&#34;http://the-witness.net/&#34; target=&#34;_blank&#34;&gt;The Witness&lt;/a&gt; and Tetris.&lt;/p&gt;
 
-&lt;p&gt;If you want to try the beta version please contact Pixleon.&lt;/p&gt;
+&lt;p&gt;Here is a short trailer showcasing the beta version of the game:&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/yttBp9HnHUg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Pixleon would be very happy if you would consider to try out the beta. It is free and available &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. Pixleon would be even happier if you would &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;share your impressions&lt;/a&gt;. Is is too easy/hard? Which level was most fun? Is the controls intuitive? Please help us make this game the best it can be. Many thanks in advance.&lt;/p&gt;
 </description>
     </item>
     
