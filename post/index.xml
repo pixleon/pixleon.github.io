@@ -13,6 +13,25 @@
     </image>
     
     <item>
+      <title>New demo</title>
+      <link>/post/new-demo/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/new-demo/</guid>
+      <description>&lt;p&gt;Yesterday I uploaded a new version of Marbleous Blocks. This version contains bug fixes, various level editor improvements and five new puzzles.&lt;/p&gt;
+
+&lt;p&gt;There are now a whooping 23 puzzles in the &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;demo&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;I do not expect the final demo to contain more puzzles than this (possibly fewer) but I might tweak and rearrange puzzles depending on feedback I get from play testing.&lt;/p&gt;
+
+&lt;p&gt;Creating puzzles is fun and challenging. Lately I have found inspiration from shapes and patterns. For instance I might start to build a puzzle from a hearth shape or from a checker pattern. It does not always result in an interesting puzzle but usually you just need a seed of inspiration to get your mind spinning.&lt;/p&gt;
+
+&lt;p&gt;The goal is to reach 50 puzzles before releasing the game so there is still lots of work left to be done.&lt;/p&gt;
+
+&lt;p&gt;If you have a good idea for a puzzle please send us an &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;email&lt;/a&gt; or try to create it yourself in the demo.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Trailer</title>
       <link>/post/trailer/</link>
       <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
