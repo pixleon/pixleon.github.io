@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>New demo</title>
       <link>/post/new-demo/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       <guid>/post/new-demo/</guid>
       <description>&lt;p&gt;Yesterday I uploaded a new version of Marbleous Blocks. This version contains bug fixes, various level editor improvements and five new puzzles.&lt;/p&gt;
 
