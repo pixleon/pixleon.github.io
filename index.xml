@@ -5,12 +5,31 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Pixleon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 03 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Pixleon</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Steam</title>
+      <link>/post/steam/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>/post/steam/</guid>
+      <description>&lt;p&gt;I have started preparing &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;Marbleous Blocks&lt;/a&gt; for early access on Steam. There are quite a few steps involved in this process. One of them being cover art.&lt;/p&gt;
+
+&lt;p&gt;So that is what I have been working on during evenings this week. Above you can see one of the images I produced. It showcases some features in the game like various marbles with different abilities, falling blocks, catapults, various &amp;ldquo;connectors&amp;rdquo; (the green symbols) etc.&lt;/p&gt;
+
+&lt;p&gt;It was a lot of fun working with 3D-modeling and rendering again. Last time I did it &amp;ldquo;seriously&amp;rdquo; was with 3ds Max 4 around 20 years ago - wow, time really flies.&lt;/p&gt;
+
+&lt;p&gt;Anyway today I use &lt;a href=&#34;https://www.blender.org/&#34; target=&#34;_blank&#34;&gt;Blender&lt;/a&gt;, and it has evolved tremendously since last I tried it. There are still some things that feel awkward, like multi select, but overall it allows you to do what I want, and there are a lot of possibilities for customization of the UI. The interactive path tracing they provide was of great help when trying to find the correct look for the cover art. Blender is an excellent tool for indie developers for various reasons. To begin with it is completely free of charge. On top of that there is a big community around Blender which makes it easy to find answers to questions you might stumble across when working in it.&lt;/p&gt;
+
+&lt;p&gt;Another tool I used was &lt;a href=&#34;https://www.gimp.org/&#34; target=&#34;_blank&#34;&gt;GIMP&lt;/a&gt; which is a free image editor that I am also quite fond of.&lt;/p&gt;
+
+&lt;p&gt;Tools like this enable developers like myself to make pretty high quality stuff without spending a fortune. If Pixleon ever would become financially successful I should need to look into giving back to this community of great/free tools.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>New demo</title>
