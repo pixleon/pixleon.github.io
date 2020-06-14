@@ -5,12 +5,25 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 03 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Less is more</title>
+      <link>/post/slim-demo/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>/post/slim-demo/</guid>
+      <description>&lt;p&gt;Today I have reworked the demo version of Marbleous Blocks. It is a lot slimmer than the previous version, only featuring 10 puzzles. I hope this is enough to give the player a good idea of what kind of game experience to expect and whether he or she would be interested in buying the game or not.&lt;/p&gt;
+
+&lt;p&gt;The new version is available &lt;a href=&#34;https://github.com/pixleon/pixleon.github.io/releases/download/mb/Marbleous.Blocks.zip&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Apart from this I have been working on a new game mechanic that I think will have an interesting impact on the game experience, but I will present this later in another post.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cover art</title>
