@@ -5,12 +5,53 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Pixleon</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Pixleon</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Expression</title>
+      <link>/post/slim-demo-copy/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/post/slim-demo-copy/</guid>
+      <description>&lt;p&gt;No post in a while but I continued working on Marbleous blocks and in particular I have been focusing on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Raft feature.&lt;/li&gt;
+&lt;li&gt;More puzzles.&lt;/li&gt;
+&lt;li&gt;Undo &amp;amp; Redo.&lt;/li&gt;
+&lt;li&gt;Marble expression.&lt;/li&gt;
+&lt;li&gt;Marketing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Raft feature&lt;/b&gt;
+&lt;br/&gt;
+I have added a feature that allows the player to move already placed blocks. This adds a nice new dimension to the game and opens up the door for some interesting puzzles. I still have not fully explored the possibilities this feature enables but I have created a few new puzzles based on this mechanic.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;More puzzles&lt;/b&gt;
+&lt;br/&gt;
+I am starting to see the end of the tunnel. Currently I have 41 puzzles. The five worlds are nearly completed. I still have four puzzles to go, including the final puzzle that will be a bit bigger. Then I plan to add a few hidden puzzles to reward curious/dedicated players. I think there is a good variety of puzzles but I am not sure about the difficulty level. I need to make sure there are no brutal roadblocks, otherwise players will most likely give up. I want the game to be challenging but not impossible or unfair. More feedback is definitely needed to reach that goal.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Undo &amp;amp; Redo&lt;/b&gt;
+&lt;br/&gt;
+I got some great feedback concerning the lack of being able to undo a &amp;ldquo;move&amp;rdquo;. This is particularly annoying if you simply slipped a bit with the mouse. Marbleous Blocks does not want to punish the player for something like that as it is not fun nor interesting. So to overcome this annoyance I have implemented support for undo &amp;amp; redo based on the simple &lt;a href=&#34;http://blog.tuxedolabs.com/2018/07/10/undo-for-lazy-programmers.html&#34; target=&#34;_blank&#34;&gt;idea&lt;/a&gt; presented by Dennis Gustafsson. I think this is a nice contribution to the game as it removes an unwanted source of frustration.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Marble expression&lt;/b&gt;
+&lt;br/&gt;
+I recently joined &lt;a href=&#34;https://eastswedengame.se/&#34; target=&#34;_blank&#34;&gt;ESG&lt;/a&gt; to get more game development related inspiration but also try to give some back. The ESG community provided me with some nice feedback concerning the lack of story elements in Marbleous Blocks. This got me thinking more about this and even though Marbleous Blocks will not be a story rich game it would still benefit from a back story. Just by creating a backstory I saw the need for a more vivid main character opposed to a simple marble. So I decided to add eyes and eyebrows to the main character in order to convey some kind of expression. This gives the game a more cartoonish, or if you wish childish, look but I hope this will not drive away serious players. I guess time will tell.&lt;/p&gt;
+
+&lt;p&gt;I also got the opportunity to dust off some of my old modeling and animation skills. With some simple keyframe animations of the eyebrows and some animations of the eyes, based on where the player&amp;rsquo;s mouse cursor is located, I managed to bring life to our so far unnamed marbleous hero.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Marketing&lt;/b&gt;
+&lt;br/&gt;
+Just like most developers I spend most of my time on actual development. From my somewhat narrow perspective, there is nothing wrong with that but if no one knows about your game or application no one will play or use it, and to no surprise I want people to play my game. So I have watched a few interesting videos related to marketing, learnt some new stuff and are currently trying to apply some of that knowledge. I realize that I like most parts of game development, even marketing related efforts. I still have lots of things to learn about marketing but I like learning new things. In fact I find learning new things fundamental to happiness, at least for myself.&lt;/p&gt;
+
+&lt;p&gt;I recently started using &lt;a href=&#34;https://twitter.com/Pixleon_Games&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; in an attempt to find a bit more spot light. We will see how it pans out.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Less is more</title>
