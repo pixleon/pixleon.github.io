@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Lately I have been focusing my work on extending the graphics capabilities of the Pixleon engine. I have done some other tasks as well but this post will mostly focus on graphics related work.
+Here is a list of the topics I have been digging into:
+ Anti aliasing. Bloom. Normal mapping. Environment mapping. Tweak SSAO. Blender sculpting, decimation and UV-mapping. Eye highlight.  Anti aliasing  Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/graphics/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(202, 89%, 52%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.433a86ee45abc20edf5da1fe5a4a2348.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/graphics/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Pixleon">
+  <meta property="og:url" content="/post/graphics/">
+  <meta property="og:title" content="Graphics | Pixleon">
+  <meta property="og:description" content="Lately I have been focusing my work on extending the graphics capabilities of the Pixleon engine. I have done some other tasks as well but this post will mostly focus on graphics related work.
+Here is a list of the topics I have been digging into:
+ Anti aliasing. Bloom. Normal mapping. Environment mapping. Tweak SSAO. Blender sculpting, decimation and UV-mapping. Eye highlight.  Anti aliasing  Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks."><meta property="og:image" content="/post/graphics/featured.png">
+  <meta property="twitter:image" content="/post/graphics/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-08-09T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-08-09T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Graphics | Pixleon</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Pixleon"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1 itemprop="name">Graphics</h1>
+
+  
+
+  
+
+
+
+<meta content="2020-08-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-08-09 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Aug 9, 2020</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 450px;">
+  <div style="position: relative">
+    <img src="/post/graphics/featured_hucfafbf35a93623d73486ac1a929ff24e_3155547_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Lately I have been focusing my work on extending the graphics capabilities of the Pixleon engine. I have done some other tasks as well but this post will mostly focus on graphics related work.</p>
+
+<p>Here is a list of the topics I have been digging into:</p>
+
+<ul>
+<li>Anti aliasing.</li>
+<li>Bloom.</li>
+<li>Normal mapping.</li>
+<li>Environment mapping.</li>
+<li>Tweak SSAO.</li>
+<li>Blender sculpting, decimation and UV-mapping.</li>
+<li>Eye highlight.</li>
+</ul>
+
+<p><b>Anti aliasing</b>
+<br/>
+Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks. It is fast and gets the job done but it can also have a negative effect on the crispness of the rendered frame. This was very apparent when rendering text elements for the level editor. There is also a risk that the user playing the game does not have FXAA enabled.</p>
+
+<p>To overcome this I have looked into other alternatives. There is a relatively new TAA solution that seems to be pretty popular nowadays, there is the OpenGL built-in MSAA solution and there are a couple of different versions of the already mentioned FXAA solution. Since MSAA is not recommended to use together with deferred rendering I decided to start by implementing FXAA. I realized there were already plenty of FXAA samples and finally I decided to port the following solution found on <a href="https://www.shadertoy.com/view/ttXGzn" target="_blank">ShaderToy</a>.</p>
+
+<p>The result is better compared to no anti aliasing but it is not as good as the FXAA option found in the Nvidia control panel. I have not digged deeper into this yet though.</p>
+
+<p>The HUD elements in the game are rendered using a forward rendering pass (blending it over the deferred rendered pass). For this part of the frame I was able to use the OpenGL built-in MSAA solution. Even though this is just a small detail of the entire frame I think it gave the game a much better look. This last part was actually a little bit tricky. The OpenGL library I use, <a href="http://glew.sourceforge.net/" target="_blank">GLEW</a>, was pretty picky with how to activate this. If you have trouble getting this to work yourself please send an <a href="mailto:mail@pixleon.com" target="_blank">email</a> and I will try to help out.</p>
+
+<p><b>Bloom</b>
+<br/>
+Some of the play testers have had problems understanding that you cannot transport the marble across connector blocks. I do not blame them. Since they appeared solid the testers were frustrated when the marble passed through them. I needed something that conveyed the idea of energy and light. I needed the possibility to express a glow like effect.</p>
+
+<p><img src="/img/graphicsD.png" alt="Bloom screenshot" /></p>
+
+<p>I started exploring possibilities to implement this and once again I found a great article on <a href="https://learnopengl.com/Advanced-Lighting/Bloom" target="_blank">Learn OpenGL</a>. I want to underline that Learn OpenGL has been a fantastic resource throughout this entire project. The articles are great and there are even source code samples you can play around with.</p>
+
+<p>With the sample code and text to go with that it did not take long time until I had a first solution up and running.</p>
+
+<p><b>Normal mapping</b>
+<br/>
+By using normal maps it is possible to squeeze in a lot more surface detail without paying a high price in terms of performance. Since I use Assimp, to load my FBX models, and it can calculate tangent space vectors it was not that much of work to support tangent space normal maps in the engine. First I played around with pretty agressive normal maps but it did not really contribute as much as I would have hoped. Instead I decided to use a more subtle effect, just to add some variation between the blocks used in the game.</p>
+
+<p><b>Environment mapping</b>
+<br/>
+There are a few different blocks in the game and some have different meanings. Like the energy blocks that are needed to &ldquo;pay&rdquo; for blocks being placed in the game. I did not have a distinct look for these so I was thinking I should rely on the old &ldquo;gold&rdquo; look for this. Obviously I needed a way to render sharp reflections.</p>
+
+<p>The easiest trick in the book for this is by using cube maps. Once I got it working and changed the look to something gold like it just did not feel right. Instead I ended up giving the energy blocks a look that relates to the glowing green connectors. I hope this will help the player to make the connection (no pun intended) between the energy blocks you pick up and the cost of the blocks you place in the game. We will see if this actually works out during future play testing.</p>
+
+<p><img src="/img/graphicsA.png" alt="Bloom screenshot" /></p>
+
+<p><b>Tweak SSAO</b>
+<br/>
+When I added support for bloom I noticed some nasty SSAO artifacts. I did have some artifacts before but it got way worse. Since something needed to change I started to look into various ways to tweak the existing solution. Removing SSAO completely was never an option since this effect is crucial to give the game a decent look.</p>
+
+<p>The result was a more cartoon like effect which fits well into the game.</p>
+
+<p>Outline for blocks to be placed
+In order to improve interpretation of blocks being placed I added an outline around them. Since I render these without any SSAO this makes it easier to see the actual shapes of the blocks being placed.</p>
+
+<p><b>Blender sculpting, decimation and UV-mapping</b>
+<br/>
+Even though I like the wooden look of the blocks I got some feedback concerning them all looking the same. I decided to try out a stone look instead. How to model stones? Blender to the rescue. Once again I got the chance to use Blender and even though it was not without frustration it worked out pretty well.</p>
+
+<p>I learnt a few new things concerning sculpting and started thinking about buying a Wacom. This <a href="https://www.youtube.com/watch?v=iQ2lRRtih7w" target="_blank">video</a> was a great source of inspiration. When something has been sculpted you need to reduce it in order to be able to use it in real-time. The reduction worked pretty well. I needed to do some hand tweaking to remove T-junctions etc but overall it worked out fine. Then I used a Blender feature called &ldquo;Smart UV Project&rdquo; in order to be able to map a stone texture to the blocks.</p>
+
+<p><img src="/img/graphicsC.png" alt="Sculpting" /></p>
+
+<p>I also introduced some randomness when selecting how a block is being rotated in the game giving the games look a bit more variation. This could easily be improved further by adding a few more textures and normal maps (as discussed earlier).</p>
+
+<p><b>Eye highlight</b>
+<br/>
+Last but not least I changed how the eye highlight is being rendered. Before I used an additional mesh for it. It works but it does not look natural. So instead I added an extra light source placed close to the camera to contribute with some specular effects. It is a hack but I think it worked out pretty good.</p>
+
+<p><img src="/img/graphicsB.png" alt="Highlight" /></p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu3ca6751b7d553e48ec460a365cc7a5d1_2325_250x250_fill_lanczos_center_2.png" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.c7ee3983cbc2c9c2985f1402566c0918.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

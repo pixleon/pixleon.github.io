@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
@@ -13,10 +13,88 @@
     </image>
     
     <item>
+      <title>Graphics</title>
+      <link>/post/graphics/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/graphics/</guid>
+      <description>&lt;p&gt;Lately I have been focusing my work on extending the graphics capabilities of the Pixleon engine. I have done some other tasks as well but this post will mostly focus on graphics related work.&lt;/p&gt;
+
+&lt;p&gt;Here is a list of the topics I have been digging into:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Anti aliasing.&lt;/li&gt;
+&lt;li&gt;Bloom.&lt;/li&gt;
+&lt;li&gt;Normal mapping.&lt;/li&gt;
+&lt;li&gt;Environment mapping.&lt;/li&gt;
+&lt;li&gt;Tweak SSAO.&lt;/li&gt;
+&lt;li&gt;Blender sculpting, decimation and UV-mapping.&lt;/li&gt;
+&lt;li&gt;Eye highlight.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Anti aliasing&lt;/b&gt;
+&lt;br/&gt;
+Up until now I have relied on the GPU built-in FXAA solution to reduce &amp;ldquo;jaggies&amp;rdquo; when rendering frames for Marbleous Blocks. It is fast and gets the job done but it can also have a negative effect on the crispness of the rendered frame. This was very apparent when rendering text elements for the level editor. There is also a risk that the user playing the game does not have FXAA enabled.&lt;/p&gt;
+
+&lt;p&gt;To overcome this I have looked into other alternatives. There is a relatively new TAA solution that seems to be pretty popular nowadays, there is the OpenGL built-in MSAA solution and there are a couple of different versions of the already mentioned FXAA solution. Since MSAA is not recommended to use together with deferred rendering I decided to start by implementing FXAA. I realized there were already plenty of FXAA samples and finally I decided to port the following solution found on &lt;a href=&#34;https://www.shadertoy.com/view/ttXGzn&#34; target=&#34;_blank&#34;&gt;ShaderToy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The result is better compared to no anti aliasing but it is not as good as the FXAA option found in the Nvidia control panel. I have not digged deeper into this yet though.&lt;/p&gt;
+
+&lt;p&gt;The HUD elements in the game are rendered using a forward rendering pass (blending it over the deferred rendered pass). For this part of the frame I was able to use the OpenGL built-in MSAA solution. Even though this is just a small detail of the entire frame I think it gave the game a much better look. This last part was actually a little bit tricky. The OpenGL library I use, &lt;a href=&#34;http://glew.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;GLEW&lt;/a&gt;, was pretty picky with how to activate this. If you have trouble getting this to work yourself please send an &lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;email&lt;/a&gt; and I will try to help out.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Bloom&lt;/b&gt;
+&lt;br/&gt;
+Some of the play testers have had problems understanding that you cannot transport the marble across connector blocks. I do not blame them. Since they appeared solid the testers were frustrated when the marble passed through them. I needed something that conveyed the idea of energy and light. I needed the possibility to express a glow like effect.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/graphicsD.png&#34; alt=&#34;Bloom screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started exploring possibilities to implement this and once again I found a great article on &lt;a href=&#34;https://learnopengl.com/Advanced-Lighting/Bloom&#34; target=&#34;_blank&#34;&gt;Learn OpenGL&lt;/a&gt;. I want to underline that Learn OpenGL has been a fantastic resource throughout this entire project. The articles are great and there are even source code samples you can play around with.&lt;/p&gt;
+
+&lt;p&gt;With the sample code and text to go with that it did not take long time until I had a first solution up and running.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Normal mapping&lt;/b&gt;
+&lt;br/&gt;
+By using normal maps it is possible to squeeze in a lot more surface detail without paying a high price in terms of performance. Since I use Assimp, to load my FBX models, and it can calculate tangent space vectors it was not that much of work to support tangent space normal maps in the engine. First I played around with pretty agressive normal maps but it did not really contribute as much as I would have hoped. Instead I decided to use a more subtle effect, just to add some variation between the blocks used in the game.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Environment mapping&lt;/b&gt;
+&lt;br/&gt;
+There are a few different blocks in the game and some have different meanings. Like the energy blocks that are needed to &amp;ldquo;pay&amp;rdquo; for blocks being placed in the game. I did not have a distinct look for these so I was thinking I should rely on the old &amp;ldquo;gold&amp;rdquo; look for this. Obviously I needed a way to render sharp reflections.&lt;/p&gt;
+
+&lt;p&gt;The easiest trick in the book for this is by using cube maps. Once I got it working and changed the look to something gold like it just did not feel right. Instead I ended up giving the energy blocks a look that relates to the glowing green connectors. I hope this will help the player to make the connection (no pun intended) between the energy blocks you pick up and the cost of the blocks you place in the game. We will see if this actually works out during future play testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/graphicsA.png&#34; alt=&#34;Bloom screenshot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Tweak SSAO&lt;/b&gt;
+&lt;br/&gt;
+When I added support for bloom I noticed some nasty SSAO artifacts. I did have some artifacts before but it got way worse. Since something needed to change I started to look into various ways to tweak the existing solution. Removing SSAO completely was never an option since this effect is crucial to give the game a decent look.&lt;/p&gt;
+
+&lt;p&gt;The result was a more cartoon like effect which fits well into the game.&lt;/p&gt;
+
+&lt;p&gt;Outline for blocks to be placed
+In order to improve interpretation of blocks being placed I added an outline around them. Since I render these without any SSAO this makes it easier to see the actual shapes of the blocks being placed.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Blender sculpting, decimation and UV-mapping&lt;/b&gt;
+&lt;br/&gt;
+Even though I like the wooden look of the blocks I got some feedback concerning them all looking the same. I decided to try out a stone look instead. How to model stones? Blender to the rescue. Once again I got the chance to use Blender and even though it was not without frustration it worked out pretty well.&lt;/p&gt;
+
+&lt;p&gt;I learnt a few new things concerning sculpting and started thinking about buying a Wacom. This &lt;a href=&#34;https://www.youtube.com/watch?v=iQ2lRRtih7w&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt; was a great source of inspiration. When something has been sculpted you need to reduce it in order to be able to use it in real-time. The reduction worked pretty well. I needed to do some hand tweaking to remove T-junctions etc but overall it worked out fine. Then I used a Blender feature called &amp;ldquo;Smart UV Project&amp;rdquo; in order to be able to map a stone texture to the blocks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/graphicsC.png&#34; alt=&#34;Sculpting&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also introduced some randomness when selecting how a block is being rotated in the game giving the games look a bit more variation. This could easily be improved further by adding a few more textures and normal maps (as discussed earlier).&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Eye highlight&lt;/b&gt;
+&lt;br/&gt;
+Last but not least I changed how the eye highlight is being rendered. Before I used an additional mesh for it. It works but it does not look natural. So instead I added an extra light source placed close to the camera to contribute with some specular effects. It is a hack but I think it worked out pretty good.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/graphicsB.png&#34; alt=&#34;Highlight&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Expression</title>
-      <link>/post/slim-demo-copy/</link>
+      <link>/post/expression/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>/post/slim-demo-copy/</guid>
+      <guid>/post/expression/</guid>
       <description>&lt;p&gt;No post in a while but I continued working on Marbleous blocks and in particular I have been focusing on:&lt;/p&gt;
 
 &lt;ul&gt;
