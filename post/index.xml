@@ -27,6 +27,7 @@
 &lt;li&gt;Normal mapping.&lt;/li&gt;
 &lt;li&gt;Environment mapping.&lt;/li&gt;
 &lt;li&gt;Tweak SSAO.&lt;/li&gt;
+&lt;li&gt;Outline for blocks to be placed.&lt;/li&gt;
 &lt;li&gt;Blender sculpting, decimation and UV-mapping.&lt;/li&gt;
 &lt;li&gt;Eye highlight.&lt;/li&gt;
 &lt;/ul&gt;
@@ -61,7 +62,7 @@ There are a few different blocks in the game and some have different meanings. L
 
 &lt;p&gt;The easiest trick in the book for this is by using cube maps. Once I got it working and changed the look to something gold like it just did not feel right. Instead I ended up giving the energy blocks a look that relates to the glowing green connectors. I hope this will help the player to make the connection (no pun intended) between the energy blocks you pick up and the cost of the blocks you place in the game. We will see if this actually works out during future play testing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/graphicsA.png&#34; alt=&#34;Bloom screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/graphicsA.png&#34; alt=&#34;Environment screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Tweak SSAO&lt;/b&gt;
 &lt;br/&gt;
@@ -69,7 +70,8 @@ When I added support for bloom I noticed some nasty SSAO artifacts. I did have s
 
 &lt;p&gt;The result was a more cartoon like effect which fits well into the game.&lt;/p&gt;
 
-&lt;p&gt;Outline for blocks to be placed
+&lt;p&gt;&lt;b&gt;Outline for blocks to be placed&lt;/b&gt;
+&lt;br/&gt;
 In order to improve interpretation of blocks being placed I added an outline around them. Since I render these without any SSAO this makes it easier to see the actual shapes of the blocks being placed.&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Blender sculpting, decimation and UV-mapping&lt;/b&gt;

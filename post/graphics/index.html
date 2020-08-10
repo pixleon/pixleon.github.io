@@ -30,7 +30,7 @@
   
   <meta name="description" content="Lately I have been focusing my work on extending the graphics capabilities of the Pixleon engine. I have done some other tasks as well but this post will mostly focus on graphics related work.
 Here is a list of the topics I have been digging into:
- Anti aliasing. Bloom. Normal mapping. Environment mapping. Tweak SSAO. Blender sculpting, decimation and UV-mapping. Eye highlight.  Anti aliasing  Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks.">
+ Anti aliasing. Bloom. Normal mapping. Environment mapping. Tweak SSAO. Outline for blocks to be placed. Blender sculpting, decimation and UV-mapping. Eye highlight.  Anti aliasing  Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/graphics/">
@@ -112,7 +112,7 @@ Here is a list of the topics I have been digging into:
   <meta property="og:title" content="Graphics | Pixleon">
   <meta property="og:description" content="Lately I have been focusing my work on extending the graphics capabilities of the Pixleon engine. I have done some other tasks as well but this post will mostly focus on graphics related work.
 Here is a list of the topics I have been digging into:
- Anti aliasing. Bloom. Normal mapping. Environment mapping. Tweak SSAO. Blender sculpting, decimation and UV-mapping. Eye highlight.  Anti aliasing  Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks."><meta property="og:image" content="/post/graphics/featured.png">
+ Anti aliasing. Bloom. Normal mapping. Environment mapping. Tweak SSAO. Outline for blocks to be placed. Blender sculpting, decimation and UV-mapping. Eye highlight.  Anti aliasing  Up until now I have relied on the GPU built-in FXAA solution to reduce &ldquo;jaggies&rdquo; when rendering frames for Marbleous Blocks."><meta property="og:image" content="/post/graphics/featured.png">
   <meta property="twitter:image" content="/post/graphics/featured.png"><meta property="og:locale" content="en-us">
   
     
@@ -435,6 +435,7 @@ Here is a list of the topics I have been digging into:
 <li>Normal mapping.</li>
 <li>Environment mapping.</li>
 <li>Tweak SSAO.</li>
+<li>Outline for blocks to be placed.</li>
 <li>Blender sculpting, decimation and UV-mapping.</li>
 <li>Eye highlight.</li>
 </ul>
@@ -469,7 +470,7 @@ There are a few different blocks in the game and some have different meanings. L
 
 <p>The easiest trick in the book for this is by using cube maps. Once I got it working and changed the look to something gold like it just did not feel right. Instead I ended up giving the energy blocks a look that relates to the glowing green connectors. I hope this will help the player to make the connection (no pun intended) between the energy blocks you pick up and the cost of the blocks you place in the game. We will see if this actually works out during future play testing.</p>
 
-<p><img src="/img/graphicsA.png" alt="Bloom screenshot" /></p>
+<p><img src="/img/graphicsA.png" alt="Environment screenshot" /></p>
 
 <p><b>Tweak SSAO</b>
 <br/>
@@ -477,7 +478,8 @@ When I added support for bloom I noticed some nasty SSAO artifacts. I did have s
 
 <p>The result was a more cartoon like effect which fits well into the game.</p>
 
-<p>Outline for blocks to be placed
+<p><b>Outline for blocks to be placed</b>
+<br/>
 In order to improve interpretation of blocks being placed I added an outline around them. Since I render these without any SSAO this makes it easier to see the actual shapes of the blocks being placed.</p>
 
 <p><b>Blender sculpting, decimation and UV-mapping</b>
