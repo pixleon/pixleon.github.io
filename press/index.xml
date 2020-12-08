@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presses | Pixleon</title>
+    <link>/press/</link>
+      <atom:link href="/press/index.xml" rel="self" type="application/rss+xml" />
+    <description>Presses</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 07 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/logo.png</url>
+      <title>Presses</title>
+      <link>/press/</link>
+    </image>
+    
+    <item>
+      <title>Press Kit: Marbleous Blocks</title>
+      <link>/press/marbleous-blocks/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>/press/marbleous-blocks/</guid>
+      <description>
+
+&lt;h1 id=&#34;details&#34;&gt;Details&lt;/h1&gt;
+
+&lt;h2 id=&#34;release&#34;&gt;Release&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+January 27:th, 2021 on Steam
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;price&#34;&gt;Price&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+7$
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;platforms&#34;&gt;Platforms&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+Windows
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;developer&#34;&gt;Developer&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+Jimmie West
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&lt;a href=&#34;mailto:mail@pixleon.com&#34; target=&#34;_blank&#34;&gt;Email&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/Pixleon_Games&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;images&#34;&gt;Images&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/pkA.png&#34; alt=&#34;A&#34; /&gt;
+&lt;img src=&#34;/img/pkB.png&#34; alt=&#34;B&#34; /&gt;
+&lt;img src=&#34;/img/pkC.png&#34; alt=&#34;C&#34; /&gt;
+&lt;img src=&#34;/img/pkD.png&#34; alt=&#34;D&#34; /&gt;
+&lt;img src=&#34;/img/pkE.png&#34; alt=&#34;E&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;videos&#34;&gt;Videos&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=l20DGhKEiU&#34; target=&#34;_blank&#34;&gt;Trailer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=5tL3M7x7ZqM&#34; target=&#34;_blank&#34;&gt;Level creation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description&lt;/h1&gt;
+
+&lt;p&gt;Marbleous Blocks is point &amp;amp; click, physics based, 3D-puzzle game, where you combine tetromino shaped blocks to create paths for a marble named Max. Your goal is to guide Max through 45 puzzles, retrieve the missing energy orbs and restore the colors of the rainbow.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create paths&lt;/strong&gt;
+&lt;br&gt;
+Carefully position and rotate 3D-tetrominoes to create paths for Max. Creating paths requires energy cubes so you need to carefully plan the paths so you and Max do not run out of energy.
+&lt;img src=&#34;/img/path.gif&#34; alt=&#34;F&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Switch suits&lt;/strong&gt;
+&lt;br&gt;
+Max may wear different suits, each with its own set of abilities. Switch between different suits to gain access to different parts of a puzzle. Planning is key, but since you may undo your actions, exploration is encouraged.
+&lt;img src=&#34;/img/suitup.gif&#34; alt=&#34;G&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Challenge your spatial thinking&lt;/strong&gt;
+&lt;br&gt;
+If you are into puzzles that challenge your spatial thinking, like exploring different solutions and happen to have a soft spot for retro sound, this is probably a game for you.
+&lt;img src=&#34;/img/inspect.gif&#34; alt=&#34;H&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
