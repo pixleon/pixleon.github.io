@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Developing Marbleous Blocks and the Pixleon Engine has been a long but rewarding journey. Unfortunately, I have not been keeping track of the number of hours I have put into this project, but a wild guess would be somewhere between six to twelve months of full-time work. That is a lot of time, so a valid question is of course if it was worth it? Before I try to answer that question, I should probably outline the goals of the project:">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/marbleous-blocks-retrospect/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(202, 89%, 52%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.433a86ee45abc20edf5da1fe5a4a2348.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/marbleous-blocks-retrospect/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Pixleon">
+  <meta property="og:url" content="/post/marbleous-blocks-retrospect/">
+  <meta property="og:title" content="Marbleous Blocks Retrospect | Pixleon">
+  <meta property="og:description" content="Developing Marbleous Blocks and the Pixleon Engine has been a long but rewarding journey. Unfortunately, I have not been keeping track of the number of hours I have put into this project, but a wild guess would be somewhere between six to twelve months of full-time work. That is a lot of time, so a valid question is of course if it was worth it? Before I try to answer that question, I should probably outline the goals of the project:"><meta property="og:image" content="/post/marbleous-blocks-retrospect/featured.png">
+  <meta property="twitter:image" content="/post/marbleous-blocks-retrospect/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-01-16T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2021-01-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Marbleous Blocks Retrospect | Pixleon</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Pixleon"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#press"><span>Press</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1 itemprop="name">Marbleous Blocks Retrospect</h1>
+
+  
+
+  
+
+
+
+<meta content="2021-01-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2021-01-16 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Jan 16, 2021</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 455px;">
+  <div style="position: relative">
+    <img src="/post/marbleous-blocks-retrospect/featured_hu989efa8d2c602927d37716ada7318f46_84327_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Developing Marbleous Blocks and the Pixleon Engine has been a long but rewarding journey. Unfortunately, I have not been keeping track of the number of hours I have put into this project, but a wild guess would be somewhere between six to twelve months of full-time work. That is a lot of time, so a valid question is of course if it was worth it? Before I try to answer that question, I should probably outline the goals of the project:</p>
+
+<ol>
+<li>Create a game with at least one new/interesting mechanic.</li>
+<li>Create a game without the use of an existing game engine.</li>
+<li>Learn as much as possible about developing and releasing games.</li>
+<li>Release the game.</li>
+</ol>
+
+<p>The first and second goal have already been reached. The third goal is a bit hard to measure but I have learnt a lot of new concepts, both technical and non-technical. Concerning the fourth goal I expect to reach that in eleven days. So just by looking at these goals I think this adventure has been a great success. Could some things have gone better and faster? Definitely. Would I have done things differently starting out today? Absolutely. But to me answering yes to these questions also means that:</p>
+
+<ol>
+<li>The project was non-trivial (for me).</li>
+<li>The project improved my knowledge of the problem domain.</li>
+</ol>
+
+<p>So, what went good and what could have gone better? I like lists so here we go.</p>
+
+<p>The Good:</p>
+
+<ul>
+<li>Looking back, I think that deciding to write my own engine helped me stay motivated.
+
+<ul>
+<li>It was an interesting technical challenge.</li>
+<li>I could focus on programming and finding flow instead of reading manuals.</li>
+<li>I was constantly learning new things and thereby improving my skillset.</li>
+<li>I created a clear separation between the engine and the game. This means that in the end I did not only get a game I could release I also got a slim and capable game engine. The separation also helped with build times, debugging etc.</li>
+</ul></li>
+<li>I wrote the build system (basically how to produce the executable game file) myself which did not only give me a better understanding of this, but it also made it very easy to integrate new libraries. On top of that I could tweak the build system to do minimal rebuild which saved me a lot of time and improved my &ldquo;quality of life&rdquo;.</li>
+<li>I wrote a &ldquo;graphical debugger&rdquo; early on. What I mean by that is that I made it trivial to add bounding boxes with wireframes, creating lines, spheres and so on. This is extremely useful when developing a game, especially a 3D-game.</li>
+<li>I talked early about releasing Marbleous Blocks which gave me some positive external pressure. During a period of six months, I even took one day a week off to work on the game, adding some more external pressure.</li>
+<li>I shared progress early with friends and got some valuable feedback. This also boosted my motivation to keep going.</li>
+<li>Early on I decided to keep things simple. That meant:
+
+<ul>
+<li>No huge worlds.</li>
+<li>No fancy character animations.</li>
+<li>Minimalistic graphics.</li>
+<li>&hellip;</li>
+</ul></li>
+<li>I finished the game. Completing projects is harder than one might expect. I claim that completing projects is a skill. Just like any skill it can be improved through training. From my perspective the key is to cut corners without sacrificing something you know you will need. Making the right decisions here comes from experience and experience is something you gain by failing, reflecting, and improving.</li>
+<li>I bought a new computer which greatly boosted my productivity (thanks Goran Esmail for the build). My old Intel i7-4770K served me well for years but my new AMD Ryzen 3700 is a monster compared to it.</li>
+<li>I wrote a diary of accomplishments I did while working. I also planned each &ldquo;work session&rdquo; beforehand which meant that many times I had a good understanding the problem I was going to work on before I started typing.</li>
+<li>I used milestones which I revised on a regular basis. This helped me to stay focused on the most important aspect of finishing the game.</li>
+<li>I started communicating about the game on this webpage which naturally forced me to reflect on the development process. It is also fun to have some documented steps of to look back at.</li>
+<li>I have learnt a lot about the Steam platform. I am still far from an expert, but I know the fundamental things.</li>
+<li>I postponed optimization until late which pushed me into attacking the parts that mattered, like 3D-model loading for instance.</li>
+<li>Used Bullet for physics. Writing my own physics engine would have taken alot of time. I have gone down that route before&hellip;</li>
+<li>Used FMOD for sound. It is an easy-to-use API that had all I needed and much more.</li>
+<li>Instead of relying entirely on the STL vocabulary I ended up wrapping the STL classes in my own containers. This allowed me to use more concise naming. I am not too fond of push_back etc.</li>
+</ul>
+
+<p>The Bad:</p>
+
+<ul>
+<li>I thought I was going to release this game in March 2020. Creating the level editor took longer than I expected and even though I decided to keep things simple I still grew the scope a bit to make the game a bit more interesting.</li>
+<li>I integrated Lua as a scripting language but ended up never using it. It was a nice learning experience but once I had the level editor, I no longer needed Lua to create levels.</li>
+<li>I had no &ldquo;test farm&rdquo; of computers. Late in the project I learnt that I had some problems with AMD GPUs and OpenGL. It would have been nice to discover something like this much earlier, but it would also require me to invest more time into testing earlier. As usual there is a sweet spot but I think I was pretty far off when it comes to testing on various machines. This is a nice argument for developing a game targeting a console with very specific hardware. Chasing driver/hardware bugs is not fun business.</li>
+<li>I did not think about the story element of Marbleous Blocks until very late in the development process. When I think about games I really enjoyed playing, and why I liked playing them, story is not the first thing that come to mind. I prefer a very polished interaction model, where you really feel you are in control, along with great graphics and sound. However, during this project I have learnt that story should not be overlooked. I think that having a solid story can lead to a clearer design and deliver an experience with more layers. I will keep this in mind for future game projects.</li>
+<li>I did lose some license information about some of the sound assets I am using. It was tedious to track these down again.</li>
+<li>It was hard to find good hours to focus on the game while working full time and taking care of kids. Do not get me wrong, having kids is great and it gives me a lot of positive energy but there is only 24 hours each day.</li>
+<li>Around two years ago I learnt about a neat library called Live++. It allows you to to edit C++ programs while they are running - a great productivity boost. For some reason I never started using it for real. I think I should have.</li>
+<li>I did not show the game externally until very late. I have learnt that for your game to stand a chance to become a commercial success you really need a strong community around it.</li>
+<li>Maybe, just maybe, I should have tried to deliver a game in another genre. Do not get me wrong. I really like the result of Marbleous Block but there are a lot of puzzle games out there. It can be very hard to stand out from the crowd even if you have an interesting game mechanic. Thinking about marketing very early is something I will bring with me for future game projects.</li>
+<li>PC might not be the ideal platform for a point &amp; click game like Marbleous Blocks. A tablet would probably have been a wiser choice. I wanted to finish a game and doing it for PC was the fastest way to achieve that goal.</li>
+<li>Did not use SDL or the like. Sure, I got a better understanding of the win32 API but if I would have used SDL I would have gotten Linux/Mac OS support with less effort. I may still go down that route.</li>
+<li>I wanted to release early but releasing a puzzle game early can be hard. The replayability aspect is limited. For the next project I probably want to release an initial version much earlier, but this  means I need to design a game that deliver a new experience for each session.</li>
+<li>Postponed tracking allocations until very late. Once I got a nice hash map tracking allocations together with file and line number it was fairly easy to find all the leaks. I could have done this much earlier.</li>
+<li>Should have written a small script for generating classes. Even though Marbleous Blocks may seem like a small game I wrote 100+ classes for it. There are a lot of tedious work when creating a new class in C++.</li>
+</ul>
+
+<p>So again, was it worth it?</p>
+
+<p>I definitely thinks so. From a economic stand point Marbleous Blocks will most likely not change my life, but from an experience point of view this journey has been very rewarding. I really love imagining something and seeing it come to life as you think, type, test in what sometimes seems to be an endless loop. The loop is finally finding its break point, at least for this time.</p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu3ca6751b7d553e48ec460a365cc7a5d1_2325_250x250_fill_lanczos_center_2.png" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+          <li>
+            <a itemprop="sameAs" href="mailto:mail@pixleon.com" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/Pixleon_Games" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.c7ee3983cbc2c9c2985f1402566c0918.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
