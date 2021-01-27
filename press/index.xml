@@ -5,12 +5,54 @@
     <link>/press/</link>
       <atom:link href="/press/index.xml" rel="self" type="application/rss+xml" />
     <description>Presses</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 07 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Presses</title>
       <link>/press/</link>
     </image>
+    
+    <item>
+      <title>Press Release</title>
+      <link>/press/press-release/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/press/press-release/</guid>
+      <description>&lt;p&gt;&lt;h2&gt;Charming yet challenging&lt;/h2&gt;
+&lt;h3&gt;Rediscovering the fun with tetrominoes&lt;/h3&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Linkoping, Sweden, January 27:th, 2021&lt;/strong&gt;: Today Pixleon launches a home brewed, condensed puzzle experience called Marbleous Blocks on Steam. Marbleous Blocks is a point &amp;amp; click, physics based, 3D-puzzle game with a retro vibe. Join a marble named Max through a block building adventure and challenge your spatial thinking in interesting new ways. Select, rotate, move, and combine tetromino shaped blocks to create new paths for Max. Together you must retrieve the missing energy orbs and restore the colors of the rainbow.&lt;/p&gt;
+
+&lt;p&gt;Even Though Marbleous Blocks was designed to be a single player game there is still plenty of room for collaboration. The core of the game is about trying out different strategies and while you try one strategy your coplayer may think of a different one or complement yours.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key features&lt;/strong&gt;:
+&lt;br&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Create paths. Move and rotate 3D-tetrominoes to create paths for Max. Creating paths requires energy cubes so you need to plan the paths, so you do not run out of energy.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Switch armors. Max may wear different armors, each with its own set of abilities. Switch between different armors to gain access to different parts of the world.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Explore. Planning is key, but since you may instantly undo your actions, exploration is encouraged and is an important aspect of the game play.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more information about Marbleous Blocks please visit:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://pixleon.com/press/marbleous-blocks/&#34; target=&#34;_blank&#34;&gt;http://pixleon.com/press/marbleous-blocks/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/app/1335700/Marbleous_Blocks/&#34; target=&#34;_blank&#34;&gt;https://store.steampowered.com/app/1335700/Marbleous_Blocks/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;About Pixleon&lt;/strong&gt;
+&lt;br&gt;
+Pixleon AB was founded in 2019 by Jimmie West with the goal to create condensed and challenging, but most important, interesting game experiences. Marbleous Blocks is Pixleon’s debut game and it aims to deliver on exactly that. For more information about Pixleon and what is brewing please visit www.pixleon.com.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Press Contact&lt;/strong&gt;
+&lt;br&gt;
+Twitter: &lt;a href=&#34;https://twitter.com/Pixleon_Games&#34; target=&#34;_blank&#34;&gt;https://twitter.com/Pixleon_Games&lt;/a&gt;
+&lt;br&gt;
+Email: mail@pixleon.com&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Press Kit: Marbleous Blocks</title>
