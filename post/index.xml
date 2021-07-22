@@ -5,12 +5,46 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Arcade in the making</title>
+      <link>/post/arcade/</link>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>/post/arcade/</guid>
+      <description>&lt;p&gt;Around six months after Marbleous Blocks was released I am finally back working on the game and the Pixleon engine. Since the release I have been completely focused on my full time job and family. The next piece of the puzzle is to release a level editor along with an arcade mode. The idea is to allow creative people to share interesting levels they have built and thereby add more variation to the game experience.&lt;/p&gt;
+
+&lt;p&gt;Creating levels vs playing them is very different but there are similarities. Both activities require creative thinking and are fun in different ways. Watching someone struggle a bit but eventually figure out a well thought out puzzle along with the joy that comes with that is very rewarding. I hope that by extending the game with this feature set the game will be able to attract a wider audience. Even if that is not the case it is a great learning experience to create a level editor for the public and a system to share content. The Marbleous Blocks development endeavour is all about learning and expanding my skill set. Obviously I want the game to reach a lot of players but just learning more things helps me stay motivated.&lt;/p&gt;
+
+&lt;p&gt;I am relying on the Steam workshop API for sharing levels between the players. So far it has been pretty straightforward to implement and most of the functionality is already working fine. I have implemented support for both publishing new levels and downloading levels published by others. The solution still needs more polish though and generally polish takes more time than one might expect. Hopefully I will be able to release this during the autumn. Please let me know if you are interested in trying this out before I release it to everybody.&lt;/p&gt;
+
+&lt;p&gt;While working on this I have also made some quality of life fixes for the level editor. It is challenging and fun to build a good level editor. It is so easy to become blind for potential friction areas in the user interface and the intended workflow. I really hope the solution is simple enough to allow a wide range of creative minds, including children, to build interesting levels.&lt;/p&gt;
+
+&lt;p&gt;I also added a feature that allows creators to have levels with an infinite amount of energy. Hopefully this step makes the game experience more approachable, especially for people that are new to the puzzle genre.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arcade in the making</title>
+      <link>/post/arcade-in-the-making/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/post/arcade-in-the-making/</guid>
+      <description>&lt;p&gt;Around six months after Marbleous Blocks was released I am finally back working on the game and the Pixleon engine. Since the release I have been completely focused on my full time job and family. The next piece of the puzzle is to release a level editor along with an arcade mode. The idea is to allow creative people to share interesting levels they have built and thereby add more variation to the game experience.&lt;/p&gt;
+
+&lt;p&gt;Creating levels vs playing them is very different but there are similarities. Both activities require creative thinking and are fun in different ways. Watching someone struggle a bit but eventually figure out a well thought out puzzle along with the joy that comes with that is very rewarding. I hope that by extending the game with this feature set the game will be able to attract a wider audience. Even if that is not the case it is a great learning experience to create a level editor for the public and a system to share content. The Marbleous Blocks development endeavour is all about learning and expanding my skill set. Obviously I want the game to reach a lot of players but just learning more things helps me stay motivated.&lt;/p&gt;
+
+&lt;p&gt;I am relying on the Steam workshop API for sharing levels between the players. So far it has been pretty straightforward to implement and most of the functionality is already working fine. I have implemented support for both publishing new levels and downloading levels published by others. The solution still needs more polish though and generally polish takes more time than one might expect. Hopefully I will be able to release this during the autumn. Please let me know if you are interested in trying this out before I release it to everybody.&lt;/p&gt;
+
+&lt;p&gt;While working on this I have also made some quality of life fixes for the level editor. It is challenging and fun to build a good level editor. It is so easy to become blind for potential friction areas in the user interface and the intended workflow. I really hope the solution is simple enough to allow a wide range of creative minds, including children, to build interesting levels.&lt;/p&gt;
+
+&lt;p&gt;I also added a feature that allows creators to have levels with an infinite amount of energy. Hopefully this step makes the game experience more approachable for an audience that are into less hardcore puzzles.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Marbleous Blocks Retrospect</title>
