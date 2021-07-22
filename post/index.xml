@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 22 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Arcade in the making</title>
       <link>/post/arcade-in-the-making/</link>
-      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
       <guid>/post/arcade-in-the-making/</guid>
       <description>&lt;p&gt;Around six months after Marbleous Blocks was released I am finally back working on the game and the Pixleon engine. Since the release I have been completely focused on my full time job and family. The next piece of the puzzle is to release a level editor along with an arcade mode. The idea is to allow creative people to share interesting levels they have built and thereby add more variation to the game experience.&lt;/p&gt;
 
