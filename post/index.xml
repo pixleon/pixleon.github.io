@@ -5,12 +5,31 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 04 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Time for an Adventure</title>
+      <link>/post/adventure/</link>
+      <pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate>
+      <guid>/post/adventure/</guid>
+      <description>&lt;p&gt;We are almost half through 2022 and I have not posted any update in a long time so here we go. In August last year I updated Marbleous Blocks with a built-in level editor along with the possibility to easily share levels with other players. Did sales take off? No! Was I happy with the result? Yes! Did I reach the conclusion that it is time to move on to new projects? Yes! :)&lt;/p&gt;
+
+&lt;p&gt;During the Autumn I only worked 60% and spent the rest of my time with my family. It is really awesome to live in a country like Sweden where it is culturally accepted and financially viable to take time off to be with your kids. Working 60% was okay but it was hard to convince the brain that I no longer could get as much work done. Overall, I think I managed to balance it quite well. During this time I was part of a group adding support for PBR materials for CET Designer and even though the release was intense I think we managed to take some important steps towards modernizing the graphics capabilities for CET Designer. During this time I also worked with another individual on writing a &lt;a href=&#34;https://support.configura.com/hc/en-us/articles/4415768957463-Rendering-Guide-Introduction&#34; target=&#34;_blank&#34;&gt;tutorial&lt;/a&gt; on how to produce nice renderings in CET Designer. I was pretty pleased with the end result and I really hope some users got some nice insights from this work.&lt;/p&gt;
+
+&lt;p&gt;In the beginning of December I finally took the step and handed in my letter of resignation. I had been thinking about running my own business for a long time so it was about time to avoid a &amp;ldquo;What if?&amp;rdquo;. It still felt pretty surreal making the final decision to leave a company you worked at for almost 14 years. Overall I am very thankful for my time at Configura and all the things I learned over the years. In the end I guess what I will remember is the people I worked with and the things we went through together. I once read that people will not remember what you said or did but rather how you made them feel. I think there is some truth to that.&lt;/p&gt;
+
+&lt;p&gt;During my last few months I helped out with creating a bridge between CET Designer and Twinmotion. This was a pretty fun project and I think it is a good step for Configura to leverage the rendering capabilities developed by Epic. It will be interesting to follow how that is received.&lt;/p&gt;
+
+&lt;p&gt;Currently I am working as a contractor at an unnamed Linkoping company. I have been there around two months now and even though I feel I still have things to prove I think it is progressing well. I have learnt a ton of new things and I hope/think I have been able to bring some value back to them. It is a humbling experience going from being an &amp;ldquo;expert&amp;rdquo; on a product, or at least subsystem, to being a complete rookie. That being said, many concepts are recognizable from CET Designer and I still approach software development in the same way as I did before. We will see how things play out but so far I am enjoying the so called adventure.&lt;/p&gt;
+
+&lt;p&gt;I think I will leave it at this for now. Sometime in the future I will probably write more about my time at Configura and outline my main takeaways. Until next time!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Arcade 1.0</title>
