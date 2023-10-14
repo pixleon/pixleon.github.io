@@ -4,7 +4,7 @@
     <style>
       body {
         margin: 0;
-        background: linear-gradient(-45deg, #a6a6a6, #137db8, #262626, #a6a6a6);
+        background: #137db8;
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
         height: 100vh;
@@ -15,22 +15,10 @@
       canvas {
         background-color: white;
       }
-
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
     </style>
   </head>
   <script type="module">
-    import init from './out/demo.js'
+    import init from './out/my_game.js'
     init()
   </script>
 </html>
