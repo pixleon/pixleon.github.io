@@ -65,5 +65,13 @@ Planning is key, but since you may instantly undo your actions, exploration is e
       <description></description>
     </item>
     
+    <item>
+      <title>WASM Bevy Demo 2</title>
+      <link>/project/wasm-bevy-demo2/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/project/wasm-bevy-demo2/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
