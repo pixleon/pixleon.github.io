@@ -5,12 +5,21 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 04 Aug 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
+    
+    <item>
+      <title>Bit Jumper</title>
+      <link>/project/bit-jumper/</link>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>/project/bit-jumper/</guid>
+      <description>&lt;p&gt;I simple platformer made under gamejam like conditions. Click &lt;a href=&#34;https://pixleon.com/project/bit-jumper/BitJumper.zip&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to download an early POC.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Marbleous Blocks</title>

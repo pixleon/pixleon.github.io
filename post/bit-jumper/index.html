@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This summer I have had a bit less vacation but there has still been some room for a bit of &ldquo;vacation programming&rdquo;. This year I decided to do a simple game in Godot. I wrote a bit about Godot a while ago, but I never got to create any game protype to get a better feel for the engine, so I decided to change that. This resulted in a simple 2D climbing platformer prototype with a time attack mechanic and procedurally generated platforms.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/bit-jumper/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(202, 89%, 52%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.433a86ee45abc20edf5da1fe5a4a2348.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/bit-jumper/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Pixleon">
+  <meta property="og:url" content="/post/bit-jumper/">
+  <meta property="og:title" content="Bit Jumper | Pixleon">
+  <meta property="og:description" content="This summer I have had a bit less vacation but there has still been some room for a bit of &ldquo;vacation programming&rdquo;. This year I decided to do a simple game in Godot. I wrote a bit about Godot a while ago, but I never got to create any game protype to get a better feel for the engine, so I decided to change that. This resulted in a simple 2D climbing platformer prototype with a time attack mechanic and procedurally generated platforms."><meta property="og:image" content="/post/bit-jumper/featured.png">
+  <meta property="twitter:image" content="/post/bit-jumper/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2024-08-04T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2024-08-04T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Bit Jumper | Pixleon</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Pixleon"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#press"><span>Press</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1 itemprop="name">Bit Jumper</h1>
+
+  
+
+  
+
+
+
+<meta content="2024-08-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2024-08-04 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>Aug 4, 2024</time>
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+  
+    
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 405px;">
+  <div style="position: relative">
+    <img src="/post/bit-jumper/featured_hue62c5b2930dfb849682d1458763f38f7_113223_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>This summer I have had a bit less vacation but there has still been some room for a bit of &ldquo;vacation programming&rdquo;. This year I decided to do a simple game in Godot. I wrote a bit about Godot a while ago, but I never got to create any game protype to get a better feel for the engine, so I decided to change that. This resulted in a simple 2D climbing platformer prototype with a time attack mechanic and procedurally generated platforms. I decided to call this game prototype Bit Jumper. It uses low res pixel graphics and you spend a lot of time jumping so I thought that was a descriptive name. The process developing Bit Jumper was a fun and mostly frictionless process thanks to the iteration speed provided by the Godot engine. I did run into a few head scratching issues but nothing I could not overcome within 15 minutes or so.</p>
+
+<p>I also tried to involve my son in the design and graphics creation process. Both to get some “external input” but also to challenge him and activate his creativity. I used the built-in programming language called GDscript for all code in the game. The code editor inside the game engine editor provided a smooth experience, but I also added GDscript mode in Emacs to be able to feel more at home. The GDscript mode in Emacs worked great for me but I prefer having two monitors when using Emacs with Godot. One monitor for the Godot editor and one monitor for Emacs. I did spend a few hours developing Bit Jumper from the couch and then I switched to using the built-in editor. It worked out well most of the time, but it is not Emacs.The graphics and animations for the game were created in <a href="https://www.aseprite.org/" target="_blank">Aasprite</a>. It was very easy to import sprites from Aasprite to Godot and using Aasprite was mostly a smooth experience. I actually used a bit of Gimp to modulate the colors of the platform blocks but apart from that I only used Aasprite.</p>
+
+<p>I also tried using <a href="https://www.beepbox.co/" target="_blank">Beepbox</a> to create a short retro tune that I loop forever. Beepbox was very user friendly for doing simple retro tunes and I had &ldquo;something good enough&rdquo; for a POC in a few minutes. I think you can create pretty advanced tunes with it too but for game jams and the like I think it is an ideal tool.</p>
+
+<p><strong>POC features</strong>:</p>
+
+<ul>
+<li>Jump mechanics.</li>
+<li>Pickups.</li>
+<li>Time attack.</li>
+<li>Platform generated by code (different experience for each play).
+
+<ul>
+<li>Well, not that different but still the platform layout and where the pickups are located differs between each play session.</li>
+</ul></li>
+<li>Simple pixel graphics including a walk and idle animation.</li>
+<li>High score list tracking how far you climbed vertically.</li>
+<li>Sound effects and simple background music.</li>
+</ul>
+
+<p>Let me try to summarize my &ldquo;vacation programming&rdquo; experience with a <strong>Good</strong> vs <strong>Bad</strong> list.</p>
+
+<p>The <strong>Good</strong>:</p>
+
+<ul>
+<li>GDscript.
+
+<ul>
+<li>It allowed me to iterate fast.</li>
+<li>Emitting signals and reacting to those was straightforward.</li>
+</ul></li>
+<li>Godot documentation.
+
+<ul>
+<li>It was mostly very helpful and in the cases I could not find the answer I either figured it out myself or I successfully googled for the answer.</li>
+</ul></li>
+<li>Graphics creation.
+
+<ul>
+<li>Creating and importing sprites from Aasprite, and to some extent Gimp, was fun and simple.</li>
+</ul></li>
+<li>Not having to reinvent the wheel.
+
+<ul>
+<li>All the building blocks I needed were provided by Godot. For instance, gamepadsupport, windowed/full screen mode, UI etc.</li>
+</ul></li>
+<li>Scope.
+
+<ul>
+<li>I kept the scope small, meaning I could make a fully playable prototype.</li>
+</ul></li>
+<li>Beebox.
+
+<ul>
+<li>It was very user friendly and it was fun to create your own “music”.</li>
+</ul></li>
+</ul>
+
+<p>The <strong>Bad</strong>:</p>
+
+<ul>
+<li>Switching between scripts in the built-in editor was a bit tedious at times. Not sure if Godot is to blame for this or my ability to keep track of the script names.</li>
+</ul>
+
+<p>In total I have probably spent around 24 hours on this prototype, including graphics, animation and music creation. It is playable and my kids think it is fun to play but it would require a lot more work to reach a level where I would be comfortable releasing this as a commercial game.</p>
+
+<p>We will see if I will continue developing it or not. Soon I will go back to full time work and then I will have a lot less time and energy for additional development.</p>
+
+<p>You can try out the very unpolished POC <a href="https://pixleon.com/project/bit-jumper/BitJumper.zip" target="_blank">here</a></p>
+
+<p>That is all for now.</p>
+
+    </div>
+
+    
+
+
+    
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu3ca6751b7d553e48ec460a365cc7a5d1_2325_250x250_fill_lanczos_center_2.png" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+          <li>
+            <a itemprop="sameAs" href="mailto:mail@pixleon.com" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/Pixleon_Games" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.c7ee3983cbc2c9c2985f1402566c0918.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
