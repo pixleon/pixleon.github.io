@@ -17,9 +17,15 @@
       <link>/post/bit-jumper/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate>
       <guid>/post/bit-jumper/</guid>
-      <description>&lt;p&gt;This summer I have had a bit less vacation but there has still been some room for a bit of &amp;ldquo;vacation programming&amp;rdquo;. This year I decided to do a simple game in Godot. I wrote a bit about Godot a while ago, but I never got to create any game protype to get a better feel for the engine, so I decided to change that. This resulted in a simple 2D climbing platformer prototype with a time attack mechanic and procedurally generated platforms. I decided to call this game prototype Bit Jumper. It uses low res pixel graphics and you spend a lot of time jumping so I thought that was a descriptive name. The process developing Bit Jumper was a fun and mostly frictionless process thanks to the iteration speed provided by the Godot engine. I did run into a few head scratching issues but nothing I could not overcome within 15 minutes or so.&lt;/p&gt;
+      <description>&lt;p&gt;This summer I have had a bit less vacation but there has still been some room for a bit of &amp;ldquo;vacation programming&amp;rdquo;. This year I decided to do a simple game in Godot. I wrote a bit about Godot a while ago, but I never got to create any game protype to get a better feel for the engine, so I decided to change that. This resulted in a simple 2D climbing platformer prototype with a time attack mechanic and procedurally generated platforms. I decided to call this game prototype Bit Jumper. It uses low res pixel graphics and you spend a lot of time jumping so I thought that was a descriptive name.&lt;/p&gt;
 
-&lt;p&gt;I also tried to involve my son in the design and graphics creation process. Both to get some “external input” but also to challenge him and activate his creativity. I used the built-in programming language called GDscript for all code in the game. The code editor inside the game engine editor provided a smooth experience, but I also added GDscript mode in Emacs to be able to feel more at home. The GDscript mode in Emacs worked great for me but I prefer having two monitors when using Emacs with Godot. One monitor for the Godot editor and one monitor for Emacs. I did spend a few hours developing Bit Jumper from the couch and then I switched to using the built-in editor. It worked out well most of the time, but it is not Emacs.The graphics and animations for the game were created in &lt;a href=&#34;https://www.aseprite.org/&#34; target=&#34;_blank&#34;&gt;Aasprite&lt;/a&gt;. It was very easy to import sprites from Aasprite to Godot and using Aasprite was mostly a smooth experience. I actually used a bit of Gimp to modulate the colors of the platform blocks but apart from that I only used Aasprite.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/bitJumper.png&#34; alt=&#34;Gameplay&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The process developing Bit Jumper was a fun and mostly frictionless process thanks to the iteration speed provided by the Godot engine. I did run into a few head scratching issues but nothing I could not overcome within 15 minutes or so.&lt;/p&gt;
+
+&lt;p&gt;I also tried to involve my son in the design and graphics creation process. Both to get some “external input” but also to challenge him and activate his creativity. I used the built-in programming language called GDscript for all code in the game. The code editor inside the game engine editor provided a smooth experience, but I also added GDscript mode in Emacs to be able to feel more at home. The GDscript mode in Emacs worked great for me but I prefer having two monitors when using Emacs with Godot. One monitor for the Godot editor and one monitor for Emacs. I did spend a few hours developing Bit Jumper from the couch and then I switched to using the built-in editor. It worked out well most of the time, but it is not Emacs. The graphics and animations for the game were created in &lt;a href=&#34;https://www.aseprite.org/&#34; target=&#34;_blank&#34;&gt;Asesprite&lt;/a&gt;. It was very easy to import sprites from Asesprite to Godot and using Asesprite was mostly a smooth experience. I actually used a bit of Gimp to modulate the colors of the platform blocks but apart from that I only used Asesprite.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/asesprite.png&#34; alt=&#34;Asesprite&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I also tried using &lt;a href=&#34;https://www.beepbox.co/&#34; target=&#34;_blank&#34;&gt;Beepbox&lt;/a&gt; to create a short retro tune that I loop forever. Beepbox was very user friendly for doing simple retro tunes and I had &amp;ldquo;something good enough&amp;rdquo; for a POC in a few minutes. I think you can create pretty advanced tunes with it too but for game jams and the like I think it is an ideal tool.&lt;/p&gt;
 
@@ -58,7 +64,7 @@
 &lt;li&gt;Graphics creation.
 
 &lt;ul&gt;
-&lt;li&gt;Creating and importing sprites from Aasprite, and to some extent Gimp, was fun and simple.&lt;/li&gt;
+&lt;li&gt;Creating and importing sprites from Asesprite, and to some extent Gimp, was fun and simple.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Not having to reinvent the wheel.
 
