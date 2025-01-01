@@ -1,0 +1,12 @@
+[
+	{
+		"challengeType":	"MathWhatIs",
+		"rangeBegin":	0,
+		"rangeEnd": 10,
+		"operation":	"+",
+		"answerRules":	[
+			"MustBePositive"
+		],
+		"count":	5
+	},
+]
