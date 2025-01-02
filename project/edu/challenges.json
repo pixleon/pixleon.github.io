@@ -7,7 +7,7 @@
 		"answerRules":	[
 			"MustBePositive"
 		],
-		"count":	10
+		"count":	4
 	},
     	{
 		"challengeType":	"MathWhatIs",
@@ -17,6 +17,26 @@
 		"answerRules":	[
 			"MustBePositive"
 		],
-		"count":	10
+		"count":	4
+	},
+       	{
+		"challengeType":	"MathWhatIs",
+		"rangeBegin":	1,
+		"rangeEnd": 10,
+		"operation":	"/",
+		"answerRules":	[
+			"MustBePositive"
+		],
+		"count":	4
+	},
+       	{
+		"challengeType":	"MathWhatIs",
+		"rangeBegin":	1,
+		"rangeEnd": 10,
+	        "operation":	"X",
+		"answerRules":	[
+			"MustBePositive"
+		],
+		"count":	4
 	},
 ]
