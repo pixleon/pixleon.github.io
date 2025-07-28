@@ -5,12 +5,125 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 04 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/logo.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Ahoyoo</title>
+      <link>/post/ahoyoo/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>/post/ahoyoo/</guid>
+      <description>&lt;p&gt;During the last couple of years I have been putting more or less all my work related energy into contract work. It has been fun and rewarding but I have also felt the urge to pursue my own ideas and dreams. Recently I was given the opportunity to do exactly this. This allowed me to explore a game idea that has been pondering for a while.&lt;/p&gt;
+
+&lt;p&gt;Around a year ago I created a small game prototype, named Bit Jumper, using a game engine called Godot. As already outlined &lt;a href=&#34;https://pixleon.com/post/bit-jumper/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; I was pretty happy with the development experience using Godot, and that got me thinking about using Godot for another, more serious, game development effort.&lt;/p&gt;
+
+&lt;p&gt;Since I am interested in how games can be used for other things than just blowing things into pieces (sure, I am still able to see the fun in this) I started exploring the possibility of developing a game where education related topics were central.&lt;/p&gt;
+
+&lt;p&gt;I wanted the game to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Be easy to pick up and play. This implied:
+
+&lt;ul&gt;
+&lt;li&gt;Web first (no installation required).&lt;/li&gt;
+&lt;li&gt;Touch interface.&lt;/li&gt;
+&lt;li&gt;Mobile and tablet friendly.&lt;/li&gt;
+&lt;li&gt;Fast load time.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Challenge the player to improve her/his skills directly related to specific school topics such as math, reading, geography etc.&lt;/li&gt;
+&lt;li&gt;Motivate the player by keeping track of achievements inside the game but also by providing rewards that could be used to unlock new game experiences. Ideally the player would also get motivated by seeing that school results improved by spending time in the game.&lt;/li&gt;
+&lt;li&gt;Easy to extend with new mini games to keep the players entertained and motivated to come back to the game.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I came up with a pirate concept named Ahoyoo where you travel to different islands. On each island there are treasure chests to be found but to unlock them you need to complete a challenge. The concept is definitely not unique, but I think it is a theme with the potential to be exciting for my target audience - kids aged 6-12.&lt;/p&gt;
+
+&lt;p&gt;Even though I consider myself as a developer with a fair amount of knowledge related to 3D-graphics I decided to start exploring what was possible to do with basic 2D-graphics. The main reasons behind this were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I think it is a bit easier/faster to create 2D-graphics compared to 3D. Sure, there is room to debate this.&lt;/li&gt;
+&lt;li&gt;I wanted it to be simple for the user to interact with the game. A top-down 2D game allows the player to have a clear view of what is happening in the world. Sure, you could do he same with 3D-graphics as well, like in &lt;a href=&#34;https://www.nintendo.com/us/store/products/the-legend-of-zelda-links-awakening-switch/?srsltid=AfmBOorzKANSSCibERH00SFvlfuGEzkJMxYs5tfaTQgN7vX6RDqsv7av&#34; target=&#34;_blank&#34;&gt;The Legend of Zelda: Link&amp;rsquo;s Awakening&lt;/a&gt; on the Nintendo Switch, but it would still require a fair amount of 3D-modeling and animation.&lt;/li&gt;
+&lt;li&gt;Less data to download while playing the game.&lt;/li&gt;
+&lt;li&gt;It makes it pretty easy to create a retro vibe, which I find pretty appealing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On top of this I see no connection between a good game and the need for 3D-graphics. Sure, some specific genres naturally benefit from 3D but the 3D itself does not necessarily make your game any better.&lt;/p&gt;
+
+&lt;p&gt;Despite what is outlined above concerning 2D vs 3D I still question if this was the correct decision. Some problems, like for instance making sure what is drawn on top of what, seems a bit more straightforward in 3D compared to 2D.&lt;/p&gt;
+
+&lt;p&gt;To create 2D-graphics for the game I used &lt;a href=&#34;https://www.aseprite.org/&#34; target=&#34;_blank&#34;&gt;Aseprite&lt;/a&gt;. It is a pretty simple yet powerful tool and it works exceptionally well with Godot. If you make changes to files Godot instantly updates your active scene and Godot comes with good tools to import tile based animations. I used Aseprite to create a modular character where it would be easy to change hair, clothes etc inside the game. This is what is looks like when the player edits her/his avatar (sorry about the Swedish):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/modularCharacter.png&#34; alt=&#34;Modular Character&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This does not only allow the player to tweak their avatar, it also means I can, with very little effort, use the system to create interesting NPCs. It panned out pretty well if I may say so and it is pretty easy to extend this system further with more hair styles, beards etc.&lt;/p&gt;
+
+&lt;p&gt;I also spent some time on researching how to build tile based islands in an effective way. I came across a concept called the &lt;a href=&#34;https://www.youtube.com/w
+Even though I have spent around six weeks full time work on the game it is still far from complete.atch?v=jEWFSv3ivTg&#34; target=&#34;_blank&#34;&gt;dual-grid system&lt;/a&gt; which seemed like a pretty neat idea, and it proved to work out well. It basically means I can paint land tiles where I want land and water tiles where I want water. Later on I actually simplified this further by just keeping track of land, everything else is interpreted as water. While painting land tiles it looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/dualGridBefore.png&#34; alt=&#34;Dual-grid before&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the land tiles have been placed the system uses these to create smooth transitions between the land tiles to create:
+&lt;img src=&#34;/img/dualGridAfter.png&#34; alt=&#34;Dual-grid after&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is especially useful if you want to edit an island while the game is running, something that is already part of the gameplay. Simply modifying an island without making use of the new area is not that much fun, so further down the line I might add support for farming/automation gameplay so the new land can be put to use. Another idea would be to modify islands in order to gain access to new hidden areas.&lt;/p&gt;
+
+&lt;p&gt;There is more to write about this project but I will end this post by outlining some areas that still are in need for some more attention:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;An achievement book that keeps track of the player&amp;rsquo;s progression.
+
+&lt;ul&gt;
+&lt;li&gt;I think that tracking progression visually is a very powerful tool to make an activity more enjoyable, and if an activity is more enjoyable it is more likely to feel motivated enough to return to such an activity.&lt;/li&gt;
+&lt;li&gt;Side note: I use this alot for my own work and training. I also use this approach to motivate my kids.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Create more islands with engaging challenges.
+
+&lt;ul&gt;
+&lt;li&gt;Creating new challenges (mini games) is great fun since it gives me a lot of creative freedom.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;More music. Currently there is a single short tune that is repeated. It gets a bit annoying after a while.
+
+&lt;ul&gt;
+&lt;li&gt;A short tune is enough for a prototype but definitely not enough for a commercial game.&lt;/li&gt;
+&lt;li&gt;I already have a way to control game settings like music volume so it is not the most pressing thing that needs attention.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A more complete game loop. Currently the game loop looks like this:
+
+&lt;ul&gt;
+&lt;li&gt;You travel to an island.&lt;/li&gt;
+&lt;li&gt;You complete challenges and collect gold coins.&lt;/li&gt;
+&lt;li&gt;Once all treasure chests have been found you get a verdict of how well you did and you are potentially rewarded with a bonus.
+
+&lt;ul&gt;
+&lt;li&gt;I want to award players that complete an entire island compared to just completing a few chests and then leaving the island.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;You travel back to your home island where you can buy new things for your newly found gold.
+
+&lt;ul&gt;
+&lt;li&gt;This last step needs more attention since there are currently not enough different things you can do with the gold you collect.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A server solution that keeps track of player progression. Currently the game state is stored in the web browser which means:
+
+&lt;ul&gt;
+&lt;li&gt;The player can lose the stored game state if the data in the browser is cleared.&lt;/li&gt;
+&lt;li&gt;The player cannot (easily) switch between different devices.&lt;/li&gt;
+&lt;li&gt;I have no idea how many players are interacting with the game.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;I want to introduce game mechanics that promote physical activity. Personally I see a strong connection between physical activity and having energy to learn new things. I want the game to promote this mindset both implicitly but also more explicitly through the story telling.&lt;/li&gt;
+&lt;li&gt;Add support for more languages. I have prepared the game to work on several languages but preparing for something and actually completing it are two different things. I also think it is better to provide a good game experience for the local (Swedish) audience first before thinking about reaching a wider audience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have not yet decided how much more time I will put into this project. I want to address a few of the bullets above, present a demo and then see if the market (you?) thinks the project has enough potential to continue to work on. Ideally I would like to get in touch with other companies/people doing similar things that already have established a solid connection to schools. I am pretty certain I can make Ahoyoo a fun while providing educational value, but being able to introduce Ahoyoo in schools and turning it into a profitable product is a different story, and I am pretty sure I would benefit from help in this area. I probably also would benefit from getting help from real teachers to validate the topics/challenges inside the game.&lt;/p&gt;
+
+&lt;p&gt;Regardless where this project goes from here it has been nice to once again be able to put my full creativity into use and to build something from nothing.&lt;/p&gt;
+
+&lt;p&gt;If you happen to run a company working on edutainment, or know someone who does, and want to know more about this project please reach out to me. Maybe we could collaborate?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Bit Jumper</title>
