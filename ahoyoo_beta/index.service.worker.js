@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1755595836|9539903177';
+const CACHE_VERSION = '1755602805|16510189961';
 /** @type {string} */
 const CACHE_PREFIX = 'Ahoyoo-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
