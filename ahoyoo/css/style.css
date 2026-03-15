@@ -1,0 +1,373 @@
+@font-face {
+  font-family: 'Baloo';
+  src: url('../fonts/Baloo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --ocean: rgb(0, 191, 230);
+  --ocean-dark: rgb(0, 140, 180);
+  --ocean-light: rgb(60, 210, 240);
+  --orange: #e67e22;
+  --orange-dark: #cf6d17;
+  --sand: #f0b030;
+  --sand-light: #f5c860;
+  --dark: #2d1b00;
+  --white: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Baloo', sans-serif;
+  color: var(--white);
+  background: var(--sand-light);
+  line-height: 1.5;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Top nav */
+.top-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem 1.5rem;
+  z-index: 10;
+}
+
+.lang-switch {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.85;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  transition: opacity 0.15s;
+}
+
+.lang-switch:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Ocean wrapper */
+.ocean-section {
+  background: linear-gradient(180deg, var(--ocean-dark) 0%, var(--ocean-light) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.ocean-section::before,
+.ocean-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle 4px at 3% 15%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 8% 35%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 14% 8%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 5% 52%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 19% 28%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 11% 65%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 22% 78%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 16% 90%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 81% 72%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 88% 22%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 93% 55%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 85% 38%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 78% 12%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 95% 88%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 83% 5%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%);
+  animation: sparkle1 3s ease-in-out infinite;
+}
+
+.ocean-section::after {
+  background-image:
+    radial-gradient(circle 4px at 2% 45%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 7% 62%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 12% 18%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 18% 80%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 4% 10%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 10% 48%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 21% 42%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 15% 30%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 6% 88%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 20% 5%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 24% 70%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 80% 68%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 86% 35%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 91% 55%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 96% 22%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 83% 82%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 77% 40%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 89% 92%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 94% 6%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 98% 72%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 76% 15%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 82% 50%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%);
+  animation: sparkle2 4s ease-in-out infinite;
+}
+
+.ocean-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes sparkle1 {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes sparkle2 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding-top: 4rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.hero-icon {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave svg {
+  width: 100%;
+  height: 80px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Baloo', sans-serif;
+  font-weight: 700;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-play {
+  padding: 1.2rem 4.5rem;
+  font-size: 1.8rem;
+  border-radius: 60px;
+  background: var(--orange);
+  color: var(--white);
+  border: 3px solid var(--white);
+  box-shadow: 0 6px 0 var(--orange-dark), 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-play:hover {
+  background: var(--orange-dark);
+}
+
+/* Islands Section */
+.islands {
+  padding: 4rem 2rem;
+  background: var(--sand);
+  text-align: center;
+}
+
+.islands h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.island-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.island-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.15s;
+}
+
+.island-card:hover {
+  transform: translateY(-4px);
+}
+
+.island-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.island-card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Features Section */
+.features {
+  position: relative;
+  padding: 2rem 2rem 6rem;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  padding: 1.5rem 1rem;
+  width: 250px;
+}
+
+.feature-card:nth-child(n+4) {
+  width: 170px;
+}
+
+.feature-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card:nth-child(n+4) img {
+  width: 96px;
+  height: 96px;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* CTA Section */
+.cta {
+  padding: 1rem 2rem 4rem;
+  background: var(--sand-light);
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+}
+
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1.5rem 2rem;
+  background: var(--dark);
+  color: var(--sand-light);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-icon {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .btn-play {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.3rem;
+  }
+
+  .island-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
