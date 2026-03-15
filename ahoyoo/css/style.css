@@ -337,11 +337,11 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Footer */
-.site-footer {
+/* Beach footer */
+.beach-footer {
   padding: 1.5rem 2rem;
-  background: var(--dark);
-  color: var(--sand-light);
+  background: var(--sand-light);
+  color: var(--dark);
   text-align: center;
   font-size: 0.85rem;
 }
