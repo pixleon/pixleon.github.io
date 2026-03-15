@@ -370,4 +370,9 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
+  .ocean-section::before,
+  .ocean-section::after {
+    display: none;
+  }
 }
