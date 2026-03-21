@@ -13,7 +13,7 @@ html, body, #canvas {
 
 body {
 	color: white;
-	background-color: rgb(0, 140, 180);
+	background-color: black;
 	overflow: hidden;
 	touch-action: none;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 #status {
-	background-color: rgb(0, 140, 180);
+	background-color: #242424;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -89,28 +89,7 @@ body {
 	text-align: center;
 	z-index: 1;
 }
-		
-#status-progress {
-	appearance: none;
-	-webkit-appearance: none;
-	height: 12px;
-	border-radius: 6px;
-	border: 2px solid white;
-	background: rgba(255,255,255,0.2);
-}
-#status-progress::-webkit-progress-bar {
-	background: rgba(255,255,255,0.2);
-	border-radius: 6px;
-}
-#status-progress::-webkit-progress-value {
-	background: #e67e22;
-	border-radius: 4px;
-}
-#status-progress::-moz-progress-bar {
-	background: #e67e22;
-	border-radius: 4px;
-}
-</style>
+		</style>
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 <link rel="manifest" href="index.manifest.json">
@@ -131,21 +110,9 @@ body {
 			<div id="status-notice"></div>
 		</div>
 
-				<script>
-		(function() {
-			var v = '20260320222617';
-			var originalFetch = window.fetch;
-			window.fetch = function(input, init) {
-				if (typeof input === 'string' && /\.(wasm|pck|audio\.worklet\.js)$/.test(input)) {
-					input += '?v=' + v;
-				}
-				return originalFetch.call(this, input, init);
-			};
-		})();
-		</script>
-		<script src="index.js?v=20260320222617"></script>
+		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":23095292,"index.wasm":37686550},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":23096116,"index.wasm":37686550},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
