@@ -1,0 +1,170 @@
+name: Build iOS
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'ahoyoo_ios/**'
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.6-stable"
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Godot iOS frameworks
+        id: cache-frameworks
+        uses: actions/cache@v4
+        with:
+          path: /tmp/godot-ios-frameworks
+          key: godot-ios-${{ env.GODOT_VERSION }}
+
+      - name: Download Godot export templates
+        if: steps.cache-frameworks.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p /tmp/godot-ios-frameworks
+          echo "Downloading Godot ${{ env.GODOT_VERSION }} export templates..."
+          curl -L -o /tmp/templates.tpz \
+            "https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}/Godot_v${{ env.GODOT_VERSION }}_export_templates.tpz"
+
+          echo "Extracting ios.zip from templates..."
+          unzip -q /tmp/templates.tpz "templates/ios.zip" -d /tmp
+
+          echo "Extracting iOS frameworks..."
+          unzip -q /tmp/templates/ios.zip \
+            "libgodot.ios.release.xcframework/*" \
+            "MoltenVK.xcframework/*" \
+            -d /tmp/godot-ios-frameworks
+
+          rm -f /tmp/templates.tpz /tmp/templates/ios.zip
+
+      - name: Place frameworks in project
+        run: |
+          # Ahoyoo.xcframework is the renamed release engine framework
+          cp -R /tmp/godot-ios-frameworks/libgodot.ios.release.xcframework \
+            ahoyoo_ios/Ahoyoo.xcframework
+
+          cp -R /tmp/godot-ios-frameworks/MoltenVK.xcframework \
+            ahoyoo_ios/MoltenVK.xcframework
+
+      - name: Check for signing secrets
+        id: check-secrets
+        env:
+          HAS_CERT: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
+        run: |
+          if [ -n "$HAS_CERT" ]; then
+            echo "has_signing=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_signing=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # --- Signing setup (only runs when secrets are configured) ---
+
+      - name: Install signing certificate
+        if: steps.check-secrets.outputs.has_signing == 'true'
+        env:
+          CERTIFICATE_BASE64: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
+          CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ github.run_id }}
+        run: |
+          CERTIFICATE_PATH=$RUNNER_TEMP/certificate.p12
+          KEYCHAIN_PATH=$RUNNER_TEMP/signing.keychain-db
+
+          echo "$CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH"
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERTIFICATE_PATH" -P "$CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH"
+
+      - name: Install provisioning profile
+        if: steps.check-secrets.outputs.has_signing == 'true'
+        env:
+          PROVISIONING_PROFILE_BASE64: ${{ secrets.APPLE_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          PROFILE_PATH=$RUNNER_TEMP/profile.mobileprovision
+          echo "$PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
+
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          UUID=$(/usr/libexec/PlistBuddy -c "Print UUID" /dev/stdin <<< $(/usr/bin/security cms -D -i "$PROFILE_PATH"))
+          cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$UUID".mobileprovision
+
+      # --- Build ---
+
+      - name: Build (unsigned - verification only)
+        if: steps.check-secrets.outputs.has_signing != 'true'
+        run: |
+          cd ahoyoo_ios
+          xcodebuild \
+            -project Ahoyoo.xcodeproj \
+            -scheme Ahoyoo \
+            -sdk iphonesimulator \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_ALLOWED=NO \
+            build 2>&1 | tail -30
+          echo ""
+          echo "=== Build succeeded (unsigned, simulator only) ==="
+          echo "To produce a signed .ipa, add these repository secrets:"
+          echo "  - APPLE_CERTIFICATE_BASE64"
+          echo "  - APPLE_CERTIFICATE_PASSWORD"
+          echo "  - APPLE_PROVISIONING_PROFILE_BASE64"
+          echo "  - APPLE_TEAM_ID"
+
+      - name: Build signed IPA
+        if: steps.check-secrets.outputs.has_signing == 'true'
+        env:
+          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          cd ahoyoo_ios
+
+          xcodebuild \
+            -project Ahoyoo.xcodeproj \
+            -scheme Ahoyoo \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath $RUNNER_TEMP/Ahoyoo.xcarchive \
+            DEVELOPMENT_TEAM="$TEAM_ID" \
+            archive
+
+          cat > $RUNNER_TEMP/ExportOptions.plist << PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>development</string>
+              <key>teamID</key>
+              <string>${TEAM_ID}</string>
+              <key>signingStyle</key>
+              <string>automatic</string>
+          </dict>
+          </plist>
+          PLIST
+
+          xcodebuild -exportArchive \
+            -archivePath $RUNNER_TEMP/Ahoyoo.xcarchive \
+            -exportOptionsPlist $RUNNER_TEMP/ExportOptions.plist \
+            -exportPath $RUNNER_TEMP/export
+
+      - name: Upload IPA
+        if: steps.check-secrets.outputs.has_signing == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Ahoyoo-iOS
+          path: ${{ runner.temp }}/export/*.ipa
+
+      # --- Cleanup ---
+
+      - name: Cleanup signing
+        if: always() && steps.check-secrets.outputs.has_signing == 'true'
+        run: |
+          security delete-keychain $RUNNER_TEMP/signing.keychain-db 2>/dev/null || true
+          rm -f $RUNNER_TEMP/certificate.p12 $RUNNER_TEMP/profile.mobileprovision
