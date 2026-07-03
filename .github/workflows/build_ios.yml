@@ -131,8 +131,11 @@ jobs:
             -sdk iphoneos \
             -configuration Release \
             -archivePath $RUNNER_TEMP/Ahoyoo.xcarchive \
-            DEVELOPMENT_TEAM="$TEAM_ID" \
-            archive
+              CODE_SIGN_STYLE=Manual \
+              DEVELOPMENT_TEAM="$TEAM_ID" \
+              CODE_SIGN_IDENTITY="Apple Development" \
+              PROVISIONING_PROFILE_SPECIFIER="Ahoyoo testing" \
+              archive
 
           cat > $RUNNER_TEMP/ExportOptions.plist << PLIST
           <?xml version="1.0" encoding="UTF-8"?>
@@ -144,9 +147,14 @@ jobs:
               <key>teamID</key>
               <string>${TEAM_ID}</string>
               <key>signingStyle</key>
-              <string>automatic</string>
-          </dict>
-          </plist>
+                <string>manual</string>
+                <key>provisioningProfiles</key>
+                <dict>
+                    <key>com.pixleon.ahoyoo</key>
+                    <string>Ahoyoo testing</string>
+                </dict>
+            </dict>
+            </plist>
           PLIST
 
           xcodebuild -exportArchive \
