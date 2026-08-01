@@ -2,6 +2,11 @@ name: TestFlight Upload
 
 on:
   workflow_dispatch:
+  # Chains off "Build iOS" (build_ios.yml). Only fires for the copy of
+  # this file on the default branch - that is a workflow_run rule, not a choice.
+  workflow_run:
+    workflows: ["Build iOS"]
+    types: [completed]
 
 env:
   GODOT_VERSION: "4.7-stable"
@@ -10,9 +15,15 @@ env:
 jobs:
   build:
     runs-on: macos-latest
+    # Manual runs always go; chained ones skip if the iOS build failed.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # workflow_run checks out the default branch by default, so pin it to
+          # the commit that was actually built.
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
 
       - name: Require signing secrets
         env:
