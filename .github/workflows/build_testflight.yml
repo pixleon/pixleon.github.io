@@ -9,7 +9,7 @@ on:
     types: [completed]
 
 env:
-  GODOT_VERSION: "4.7-stable"
+  GODOT_VERSION: "4.7.2-stable"
   APPSTORE_PROFILE_NAME: "Ahoyoo App Store"
 
 jobs:
