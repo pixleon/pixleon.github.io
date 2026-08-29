@@ -345,19 +345,18 @@ body {
 
 /* Same bubble as the promise cards: lighter than its section, white outline. */
 .feature-card {
-  width: 190px;
-  padding: 1rem 0.85rem 1.15rem;
+  width: 200px;
+  padding: 1.25rem 1rem 1.5rem;
   background: var(--honey);
   border: 2px solid var(--white);
   border-radius: 24px;
 }
 
-/* Tall enough for the boat, which is the tallest sprite and sets the row. */
 .feature-figure {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 99px;
+  height: 198px;
   margin-bottom: 0.5rem;
 }
 
@@ -378,7 +377,7 @@ body {
 }
 
 .feature-card img.feature-img-large {
-  height: 99px;
+  height: 198px;
 }
 
 /* The cannon is wide and short, so it is matched to the chest and sabre by
@@ -539,6 +538,7 @@ body {
 
   .stores h2,
   .promise h2,
+  .ship-text h2,
   .features h2 {
     font-size: 1.7rem;
   }
@@ -549,12 +549,35 @@ body {
     max-width: 320px;
   }
 
+  .ship-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .ship-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .ship-text p {
+    max-width: none;
+  }
+
   .feature-card {
     width: 150px;
   }
 
+  .feature-figure {
+    height: 99px;
+  }
+
   .feature-card img {
     height: 64px;
+  }
+
+  .feature-card img.feature-img-large {
+    height: 99px;
   }
 
   .ocean-section::before,
