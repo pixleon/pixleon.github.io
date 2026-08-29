@@ -334,10 +334,11 @@ body {
   text-shadow: 2px 2px 0 rgba(255,255,255,0.4);
 }
 
+/* Four fixed columns rather than wrapping on a fixed card width, so the row
+   split stays put and the cards - not the gaps - absorb a narrower screen. */
 .feature-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   max-width: 900px;
   margin: 0 auto;
@@ -345,7 +346,6 @@ body {
 
 /* Same bubble as the promise cards: lighter than its section, white outline. */
 .feature-card {
-  width: 190px;
   padding: 1rem 0.85rem 1.15rem;
   background: var(--honey);
   border: 2px solid var(--white);
@@ -514,6 +514,13 @@ body {
   font-size: 0.9rem;
 }
 
+/* Tablet: four columns get cramped before the phone layout takes over. */
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .hero {
@@ -549,8 +556,9 @@ body {
     max-width: 320px;
   }
 
-  .feature-card {
-    width: 150px;
+  /* One per row, so these match the width of the promise bubbles above. */
+  .feature-grid {
+    grid-template-columns: 1fr;
   }
 
   .feature-card img {
