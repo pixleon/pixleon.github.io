@@ -19,6 +19,7 @@
   --honey: #f9d78f;
   --turquoise: #0fb2cc;
   --turquoise-dark: #0a8ea4;
+  --sky: #ade0f5;
   /* Translucent deep blue shared by everything that floats on the ocean:
      the age pill, the store badges and the promise cards. */
   --deep-blue: rgba(0, 60, 85, 0.35);
@@ -283,10 +284,10 @@ body {
   margin: 0 auto;
 }
 
-/* Its own island of yellow on the ocean, so it keeps the dark body text rather
-   than inheriting the white the ocean sets. */
+/* A pale island on the ocean, so it keeps the dark body text rather than
+   inheriting the white the ocean sets. */
 .promise-card {
-  background: var(--sand-light);
+  background: var(--sky);
   color: var(--dark);
   border: 2px solid var(--white);
   border-radius: 18px;
