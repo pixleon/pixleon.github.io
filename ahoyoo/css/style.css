@@ -16,10 +16,12 @@
   --parchment: #fdf3dc;
   --dark: #2d1b00;
   --white: #ffffff;
+  --honey: #f9d78f;
   --turquoise: #0fb2cc;
   --turquoise-dark: #0a8ea4;
-  --butter: #fdeeb4;
-  --butter-shade: #e9d489;
+  /* Translucent deep blue shared by everything that floats on the ocean:
+     the age pill, the store badges and the promise cards. */
+  --deep-blue: rgba(0, 60, 85, 0.35);
 }
 
 .mdi {
@@ -56,7 +58,6 @@ body {
   color: var(--white);
   position: relative;
   overflow: hidden;
-  padding-bottom: 5rem;
 }
 
 .ocean-section::before,
@@ -183,7 +184,7 @@ body {
   display: inline-block;
   padding: 0.4rem 1.1rem;
   border-radius: 999px;
-  background: rgba(0, 60, 85, 0.35);
+  background: var(--deep-blue);
   border: 2px solid rgba(255,255,255,0.55);
   font-size: 1.05rem;
 }
@@ -193,7 +194,7 @@ body {
   position: relative;
   text-align: center;
   color: var(--white);
-  padding: 1rem 1.5rem 6rem;
+  padding: 1rem 1.5rem 3rem;
 }
 
 .stores h2 {
@@ -217,7 +218,7 @@ body {
   padding: 0.85rem 1.6rem;
   min-width: 250px;
   border-radius: 18px;
-  background: rgba(0, 60, 85, 0.35);
+  background: var(--deep-blue);
   border: 2px dashed rgba(255,255,255,0.6);
 }
 
@@ -261,17 +262,17 @@ body {
   height: 80px;
 }
 
-/* Promise: no ads, no IAP, buy once */
+/* Promise: no ads, no IAP, buy once. Sits inside the ocean, so its bottom
+   padding has to clear the wave that overlaps the last of it. */
 .promise {
-  background: var(--sand-light);
-  padding: 1rem 1.5rem 4rem;
+  padding: 1rem 1.5rem 7rem;
   text-align: center;
 }
 
 .promise h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 0 rgba(255,255,255,0.4);
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
 
 .promise-grid {
@@ -282,11 +283,14 @@ body {
   margin: 0 auto;
 }
 
+/* Its own island of yellow on the ocean, so it keeps the dark body text rather
+   than inheriting the white the ocean sets. */
 .promise-card {
-  background: var(--butter);
+  background: var(--sand-light);
+  color: var(--dark);
+  border: 2px solid var(--white);
   border-radius: 18px;
   padding: 1.5rem 1.25rem;
-  box-shadow: 0 4px 0 var(--butter-shade);
 }
 
 .promise-check {
@@ -318,7 +322,7 @@ body {
 
 /* Features */
 .features {
-  background: var(--sand);
+  background: var(--sand-light);
   padding: 3.5rem 1.5rem;
   text-align: center;
 }
@@ -389,7 +393,7 @@ body {
 
 /* Parents */
 .parents {
-  background: var(--parchment);
+  background: var(--honey);
   padding: 3.5rem 1.5rem;
 }
 
@@ -452,12 +456,6 @@ body {
 
 .privacy h2 {
   font-size: 2rem;
-  margin-bottom: 0.4rem;
-}
-
-.privacy-intro {
-  font-size: 1.1rem;
-  opacity: 0.85;
   margin-bottom: 1.5rem;
 }
 
