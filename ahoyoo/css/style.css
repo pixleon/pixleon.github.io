@@ -6,9 +6,10 @@
 }
 
 :root {
-  --ocean: rgb(0, 191, 230);
-  --ocean-dark: rgb(0, 140, 180);
-  --ocean-light: rgb(60, 210, 240);
+  /* Azure rather than teal, to sit in the same family as the icon's sky. */
+  --ocean: rgb(74, 180, 242);
+  --ocean-dark: rgb(47, 150, 234);
+  --ocean-light: rgb(111, 211, 247);
   --orange: #e67e22;
   --orange-dark: #cf6d17;
   --sand: #f0b030;
@@ -55,7 +56,7 @@ body {
 
 /* Ocean wrapper */
 .ocean-section {
-  background: linear-gradient(180deg, var(--ocean-dark) 0%, var(--ocean-light) 100%);
+  background: linear-gradient(180deg, var(--ocean-dark) 0%, var(--ocean) 45%, var(--ocean-light) 100%);
   color: var(--white);
   position: relative;
   overflow: hidden;
