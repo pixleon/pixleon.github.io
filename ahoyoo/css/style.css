@@ -586,7 +586,7 @@ body {
   max-width: 620px;
   min-height: 70vh;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
