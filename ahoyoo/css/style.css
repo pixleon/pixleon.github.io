@@ -1,0 +1,687 @@
+@font-face {
+  font-family: 'Baloo';
+  src: url('../fonts/Baloo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  /* Azure rather than teal, to sit in the same family as the icon's sky. */
+  --ocean: rgb(74, 180, 242);
+  --ocean-dark: rgb(47, 150, 234);
+  --ocean-light: rgb(111, 211, 247);
+  --orange: #e67e22;
+  --orange-dark: #cf6d17;
+  --sand: #f0b030;
+  --sand-light: #f5c860;
+  --parchment: #fdf3dc;
+  --dark: #2d1b00;
+  --white: #ffffff;
+  --honey: #f9d78f;
+  --turquoise: #0fb2cc;
+  --turquoise-dark: #0a8ea4;
+  --sky: #ade0f5;
+  /* Translucent deep blue shared by everything that floats on the ocean:
+     the age pill, the store badges and the promise cards. */
+  --deep-blue: rgba(0, 60, 85, 0.35);
+}
+
+.mdi {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Baloo', sans-serif;
+  color: var(--dark);
+  background: var(--sand-light);
+  line-height: 1.5;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Ocean wrapper */
+.ocean-section {
+  background: linear-gradient(180deg, var(--ocean-dark) 0%, var(--ocean) 45%, var(--ocean-light) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.ocean-section::before,
+.ocean-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle 4px at 3% 15%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 8% 35%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 14% 8%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 5% 52%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 19% 28%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 11% 65%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 22% 78%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 16% 90%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 81% 72%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 88% 22%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 93% 55%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 85% 38%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 78% 12%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 95% 88%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 83% 5%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%);
+  animation: sparkle1 3s ease-in-out infinite;
+}
+
+.ocean-section::after {
+  background-image:
+    radial-gradient(circle 4px at 2% 45%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 7% 62%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 12% 18%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 18% 80%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 4% 10%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 10% 48%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 21% 42%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 15% 30%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 6% 88%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 20% 5%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 24% 70%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 80% 68%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 86% 35%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 91% 55%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 96% 22%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 83% 82%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 77% 40%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 89% 92%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 94% 6%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 98% 72%, rgba(255,255,255,0.7) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 3px at 76% 15%, rgba(255,255,255,0.8) 0%, white 60%, transparent 61%),
+    radial-gradient(circle 4px at 82% 50%, rgba(255,255,255,0.9) 0%, white 60%, transparent 61%);
+  animation: sparkle2 4s ease-in-out infinite;
+}
+
+.ocean-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes sparkle1 {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes sparkle2 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-section::before,
+  .ocean-section::after {
+    animation: none;
+  }
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 3rem 0 1rem;
+}
+
+.hero-content {
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.hero-logo {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 1rem;
+  border-radius: 24px;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));
+}
+
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  opacity: 0.92;
+  margin-bottom: 1.25rem;
+}
+
+.age-badge {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  background: var(--deep-blue);
+  border: 2px solid rgba(255,255,255,0.55);
+  font-size: 1.05rem;
+}
+
+/* Store placeholders */
+.stores {
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  padding: 1rem 1.5rem 3rem;
+}
+
+.stores h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.store-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  padding: 0.85rem 1.6rem;
+  min-width: 250px;
+  border-radius: 18px;
+  background: var(--deep-blue);
+  border: 2px dashed rgba(255,255,255,0.6);
+}
+
+.store-icon .mdi {
+  font-size: 34px;
+  opacity: 0.95;
+}
+
+.store-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.store-status {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.store-name {
+  font-size: 1.35rem;
+}
+
+.store-platform {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Nyhetsbrev */
+.signup {
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  padding: 0 1.5rem 3rem;
+}
+
+.signup h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 520px;
+  margin: 0 auto 1rem;
+}
+
+/* Formulärelement ärver inte sidans typsnitt. */
+.signup-form input[type="email"],
+.signup-form button {
+  font-family: inherit;
+  font-size: 1.05rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.55);
+}
+
+.signup-form input[type="email"] {
+  flex: 1 1 240px;
+  min-width: 0;
+  background: var(--white);
+  color: var(--dark);
+}
+
+.signup-form input[type="email"]::placeholder {
+  color: var(--dark);
+  opacity: 0.45;
+}
+
+.signup-form button {
+  background: var(--orange);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background: var(--orange-dark);
+}
+
+.signup-hp {
+  display: none;
+}
+
+.signup-note {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave svg {
+  width: 100%;
+  height: 80px;
+}
+
+/* Promise: no ads, no IAP, buy once. Sits inside the ocean, so its bottom
+   padding has to clear the wave that overlaps the last of it. */
+.promise {
+  padding: 1rem 1.5rem 7rem;
+  text-align: center;
+}
+
+.promise h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* A pale island on the ocean, so it keeps the dark body text rather than
+   inheriting the white the ocean sets. */
+.promise-card {
+  background: var(--sky);
+  color: var(--dark);
+  border: 2px solid var(--white);
+  border-radius: 18px;
+  padding: 1.5rem 1.25rem;
+}
+
+.promise-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 0.6rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--turquoise) 0%, var(--turquoise-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 3px 0 rgba(10, 142, 164, 0.35);
+}
+
+.promise-check .mdi {
+  font-size: 26px;
+}
+
+.promise-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.promise-card p {
+  font-size: 0.98rem;
+  opacity: 0.8;
+}
+
+/* Features */
+.features {
+  background: var(--sand-light);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 0 rgba(255,255,255,0.4);
+}
+
+/* Four fixed columns rather than wrapping on a fixed card width, so the row
+   split stays put and the cards - not the gaps - absorb a narrower screen. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Same bubble as the promise cards: lighter than its section, white outline. */
+.feature-card {
+  padding: 1rem 0.85rem 1.15rem;
+  background: var(--honey);
+  border: 2px solid var(--white);
+  border-radius: 24px;
+}
+
+/* Tall enough for the boat, which is the tallest sprite and sets the row. */
+.feature-figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 99px;
+  margin-bottom: 0.5rem;
+}
+
+/* Pixel art only stays crisp at whole-number scale, so every height here is a
+   whole multiple of its sprite's native size: 32px for most, 99px for the boat,
+   17px for the cannon on its mound. */
+.feature-card img {
+  display: block;
+  height: 96px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Qualified by .feature-card so these outrank the default above rather than
+   losing to its higher specificity. */
+.feature-card img.feature-img-small {
+  height: 64px;
+}
+
+.feature-card img.feature-img-large {
+  height: 99px;
+}
+
+/* The cannon is wide and short, so it is matched to the chest and sabre by
+   width, not height: 2x of its 17px gives 68px across, next to their 64px. */
+.feature-card img.feature-img-wide {
+  height: 34px;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Parents */
+.parents {
+  background: var(--honey);
+  padding: 3.5rem 1.5rem;
+}
+
+.parents-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.parents h2 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.parents-intro {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+  max-width: 60ch;
+}
+
+.parents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.parents-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.parents-anchor {
+  flex-shrink: 0;
+  color: #000;
+}
+
+.parents-anchor .mdi {
+  font-size: 26px;
+}
+
+.parents-card p {
+  font-size: 1rem;
+  opacity: 0.82;
+}
+
+/* Privacy / GDPR */
+.privacy {
+  background: var(--dark);
+  color: var(--parchment);
+  padding: 3.5rem 1.5rem;
+}
+
+.privacy-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.privacy h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.privacy-list {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.privacy-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.privacy-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--sand);
+}
+
+.privacy-list strong {
+  color: var(--sand-light);
+  font-weight: 400;
+}
+
+.privacy-contact {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.privacy a,
+.beach-footer a {
+  color: inherit;
+}
+
+/* Tack- och bekräftelsesidor */
+.message-page {
+  max-width: 620px;
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.message-logo {
+  width: 120px;
+  height: 120px;
+}
+
+.message-page h1 {
+  font-size: 2.2rem;
+}
+
+.message-body p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+.message-page a {
+  color: inherit;
+}
+
+/* Footer */
+.beach-footer {
+  padding: 1.5rem;
+  background: var(--sand-light);
+  color: var(--dark);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Tablet: four columns get cramped before the phone layout takes over. */
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.02rem;
+  }
+
+  .signup h2,
+  .stores h2,
+  .promise h2,
+  .features h2 {
+    font-size: 1.7rem;
+  }
+
+  .signup-form input[type="email"],
+  .signup-form button {
+    flex: 1 1 100%;
+  }
+
+  .store-badge {
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* One per row, so these match the width of the promise bubbles above. */
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card img {
+    height: 64px;
+  }
+
+  .ocean-section::before,
+  .ocean-section::after {
+    display: none;
+  }
+}
