@@ -6,10 +6,11 @@
 }
 
 :root {
-  /* Azure rather than teal, to sit in the same family as the icon's sky. */
-  --ocean: rgb(74, 180, 242);
+  /* Azure at the top, behind the icon, to sit in the same family as its sky;
+     turquoise from the middle down, where the trailer's sea is. */
+  --ocean: rgb(31, 178, 208);
   --ocean-dark: rgb(47, 150, 234);
-  --ocean-light: rgb(111, 211, 247);
+  --ocean-light: rgb(92, 206, 222);
   --orange: #e67e22;
   --orange-dark: #cf6d17;
   --sand: #f0b030;
@@ -189,6 +190,23 @@ body {
   background: var(--deep-blue);
   border: 2px solid rgba(255,255,255,0.55);
   font-size: 1.05rem;
+}
+
+/* Trailer, framed like the other things floating on the ocean */
+.trailer {
+  padding: 0 1.5rem 2rem;
+}
+
+.trailer-video {
+  display: block;
+  width: 100%;
+  max-width: 880px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 2px solid rgba(255,255,255,0.55);
+  background: var(--deep-blue);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 /* Store placeholders */
