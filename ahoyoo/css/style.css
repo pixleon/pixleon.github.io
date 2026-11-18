@@ -209,6 +209,100 @@ body {
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
+/* Screenshots: a row of slides that snap into place, framed like the trailer */
+.screenshots {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  box-sizing: content-box;
+}
+
+.shots-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 18px;
+  border: 2px solid rgba(255,255,255,0.55);
+  background: var(--deep-blue);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.shots-track::-webkit-scrollbar {
+  display: none;
+}
+
+.shot {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shot figcaption {
+  padding: 0.6rem 1rem 0.7rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.shots-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+
+.shots-nav[hidden] {
+  display: none;
+}
+
+.shots-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.55);
+  background: var(--deep-blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.shots-arrow .mdi {
+  font-size: 28px;
+}
+
+.shots-dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.shots-dot {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background: transparent;
+  cursor: pointer;
+}
+
+.shots-dot[aria-current="true"] {
+  background: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shots-track {
+    scroll-behavior: auto;
+  }
+}
+
 /* Store placeholders */
 .stores {
   position: relative;
