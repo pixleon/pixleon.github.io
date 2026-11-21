@@ -192,6 +192,39 @@ body {
   font-size: 1.05rem;
 }
 
+/* Language switch, floating in the top corner like the age pill */
+.ocean-section > .lang-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: var(--deep-blue);
+  border: 2px solid rgba(255,255,255,0.55);
+  font-size: 1rem;
+}
+
+.lang-switch a,
+.lang-switch .lang-current {
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+  background: rgba(255,255,255,0.2);
+}
+
+.lang-switch .lang-current {
+  background: var(--white);
+  color: var(--ocean-dark);
+}
+
 /* Trailer, framed like the other things floating on the ocean */
 .trailer {
   padding: 0 1.5rem 2rem;
